@@ -1,3 +1,9 @@
+$logo-width: 150px; 
+
 html{
     overflow-x: hidden;
+}
+
+.logo a img{
+    width: $logo-width;
 }

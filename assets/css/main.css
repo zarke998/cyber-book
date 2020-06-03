@@ -1,4 +1,8 @@
 html {
   overflow-x: hidden;
 }
+
+.logo a img {
+  width: 150px;
+}
 /*# sourceMappingURL=main.css.map */
