@@ -10,7 +10,7 @@
 
     switch($page_id){
         default:
-            $page_src = "view/home.php";
+            $page_src = "views/home.php";
             $page_title = "CyberBook | Home";
             $main_intro_slider = true;
     }
@@ -18,6 +18,7 @@
 
     include "views/fixed/head.php";
     echo getHead($page_title);
+
 
     include "views/fixed/header.php";
 
