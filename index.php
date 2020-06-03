@@ -1,5 +1,5 @@
 <?php
-    include "modals/pages.php";
+    include "models/pages.php";
 
     $page_src;
     $page_title;
