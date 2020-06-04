@@ -278,7 +278,7 @@
         </div>
         <!-- Latest Offers End -->
         <!-- Shop Method Start-->
-        <div class="shop-method-area section-padding30">
+        <div class="shop-method-area section-padding30 py-5">
             <div class="container">
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-3 col-lg-3 col-md-6">
@@ -307,27 +307,30 @@
         </div>
         <!-- Shop Method End-->
         <!-- Gallery Start-->
-        <div class="gallery-wrapper lf-padding">
-            <div class="gallery-area">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="gallery-items">
-                            <img src="assets/img/gallery/gallery1.jpg" alt="">
-                        </div> 
-                        <div class="gallery-items">
-                            <img src="assets/img/gallery/gallery2.jpg" alt="">
-                        </div>
-                        <div class="gallery-items">
-                            <img src="assets/img/gallery/gallery3.jpg" alt="">
-                        </div>
-                        <div class="gallery-items">
-                            <img src="assets/img/gallery/gallery4.jpg" alt="">
-                        </div>
-                        <div class="gallery-items">
-                            <img src="assets/img/gallery/gallery5.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
+        <div id="best-by-critics">
+            <div class="section-tittle mb-30 ml-4">
+                <h2>Best by critics</h2>
+            </div>
+            <div class="row px-4">
+                <div class="col-lg-2 col-sm-4 col-6 px-4 px-lg-2 mb-4 best-by-critics-item text-center">
+                    <img src="assets/images/book-cover-1.jpg" alt="">
+                    <a href="#">Green Dress with details</a>
+                </div> 
+                <div class="col-lg-2 col-sm-4 col-6 px-4 px-lg-2 mb-4 best-by-critics-item">
+                    <img src="assets/images/book-cover-1.jpg" alt="">
+                </div> 
+                <div class="col-lg-2 col-sm-4 col-6 px-4 px-lg-2 mb-4 best-by-critics-item">
+                    <img src="assets/images/book-cover-1.jpg" alt="">
+                </div> 
+                <div class="col-lg-2 col-sm-4 col-6 px-4 px-lg-2 mb-4 best-by-critics-item">
+                    <img src="assets/images/book-cover-1.jpg" alt="">
+                </div> 
+                <div class="col-lg-2 col-sm-4 col-6 px-4 px-lg-2 mb-4 best-by-critics-item">
+                    <img src="assets/images/book-cover-1.jpg" alt="">
+                </div> 
+                <div class="col-lg-2 col-sm-4 col-6 px-4 px-lg-2 mb-4 best-by-critics-item">
+                    <img src="assets/images/book-cover-1.jpg" alt="">
+                </div> 
             </div>
         </div>
         <!-- Gallery End-->

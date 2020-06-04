@@ -84,6 +84,17 @@ html {
   background-size: cover;
 }
 
+.best-by-critics-item img {
+  width: 100%;
+}
+
+.best-by-critics-item a {
+  display: block;
+  margin-top: 10px;
+  padding: 0px 5px;
+  color: black;
+}
+
 .pt-8 {
   padding-top: 100px;
 }
