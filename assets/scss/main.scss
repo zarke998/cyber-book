@@ -87,6 +87,11 @@ html{
         }
     }
 }
+
+#newsletter-area{
+    background-image: url("/assets/images/book-wallpaper-ultrawide.jpg");
+    background-size: cover;
+}
 // BOOTSTRAP EXTENSIONS
 .pt-8{
     padding-top: 100px;
@@ -107,6 +112,13 @@ html{
       -1px 1px 0 #000,
        1px 1px 0 #000;
   }
+.text-stroke-white-1{
+    text-shadow:
+    -1px 1px 0 #b9b9b9, 
+    1px -1px 0 #b9b9b9, 
+    -1px 1px 0 #b9b9b9, 
+    1px 1px 0 #b9b9b9;
+}
 .no-select-pointer-text{
     cursor: pointer;
     user-select: none;
