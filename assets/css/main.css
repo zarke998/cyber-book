@@ -47,6 +47,8 @@ html {
           align-items: center;
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
+  -webkit-transition: background-color 0.1s;
+  transition: background-color 0.1s;
 }
 
 #main-shop-categories .single-category .category-caption:hover {

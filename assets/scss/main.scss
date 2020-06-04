@@ -5,6 +5,7 @@ $main-slider-bg-darkness: 0.3;
 $main-slider-img-height: 500px;
 
 $main-shop-category-hover-darkness: 0.4;
+$main-shop-category-transition-speed: 0.1s;
 
 html{
     overflow-x: hidden;
@@ -50,6 +51,7 @@ html{
 
             transform: translateY(0%);
             
+            transition: background-color $main-shop-category-transition-speed;
             &:hover{
                 background-color: rgba(0,0,0, $main-shop-category-hover-darkness);
                 cursor: pointer;
