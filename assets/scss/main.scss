@@ -7,6 +7,9 @@ $main-slider-img-height: 500px;
 $main-shop-category-hover-darkness: 0.4;
 $main-shop-category-transition-speed: 0.1s;
 
+$main-most-popular-titles-img-height: 400px;
+$main-most-popular-titles-product-mb: 100px;
+
 html{
     overflow-x: hidden;
     font-size: 20px;
@@ -66,6 +69,24 @@ html{
     }
 }
 
+.most-popular-titles{
+    .single-product{
+        margin-bottom: $main-most-popular-titles-product-mb !important;
+        .product-img{
+            img{
+                width: auto;
+                height: $main-most-popular-titles-img-height;
+            }
+        }
+        .product-caption{
+            h4{
+                a{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
 // BOOTSTRAP EXTENSIONS
 .pt-8{
     padding-top: 100px;

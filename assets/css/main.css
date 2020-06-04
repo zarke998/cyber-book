@@ -66,6 +66,19 @@ html {
           user-select: none;
 }
 
+.most-popular-titles .single-product {
+  margin-bottom: 100px !important;
+}
+
+.most-popular-titles .single-product .product-img img {
+  width: auto;
+  height: 400px;
+}
+
+.most-popular-titles .single-product .product-caption h4 a {
+  font-size: 1rem;
+}
+
 .pt-8 {
   padding-top: 100px;
 }
