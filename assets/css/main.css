@@ -5,4 +5,35 @@ html {
 .logo a img {
   width: 150px;
 }
+
+#main-intro-slider {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("/assets/images/book-wallpaper.jpg") !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/assets/images/book-wallpaper.jpg") !important;
+  background-size: cover !important;
+}
+
+#main-intro-slider-image {
+  position: static;
+}
+
+#main-intro-slider-image img {
+  margin: 0px auto;
+  height: 500px;
+}
+
+#main-intro-slider-info h1, #main-intro-slider-info p {
+  color: white;
+}
+
+#main-intro-slider-info h1 {
+  font-size: 42px;
+}
+
+.pt-8 {
+  padding-top: 100px;
+}
+
+.text-stroke-black {
+  text-shadow: -2px -2px 0 #000,   2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
 /*# sourceMappingURL=main.css.map */

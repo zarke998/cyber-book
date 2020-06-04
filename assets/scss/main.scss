@@ -7,3 +7,38 @@ html{
 .logo a img{
     width: $logo-width;
 }
+
+#main-intro-slider{
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("/assets/images/book-wallpaper.jpg") !important;
+    background-size: cover !important;
+
+    &-image {
+        position: static;
+        img{
+            margin: 0px auto;
+            height: 500px;
+        }
+    }
+    &-info{
+        h1, p{
+            color: white;
+        }
+        h1{
+            font-size: 42px;
+        }
+    }
+}
+
+// BOOTSTRAP EXTENSIONS
+.pt-8{
+    padding-top: 100px;
+}
+
+// STYLE CLASSES
+.text-stroke-black{
+  text-shadow:
+   -2px -2px 0 #000,  
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+     2px 2px 0 #000;
+}
