@@ -1,9 +1,14 @@
 $logo-width: 150px;
 $default-text-color: rgb(255,255,255);
 
+$main-slider-bg-darkness: 0.3;
+$main-slider-img-height: 500px;
+
 $main-shop-category-hover-darkness: 0.4;
+
 html{
     overflow-x: hidden;
+    font-size: 20px;
 }
 
 .logo a img{
@@ -11,22 +16,22 @@ html{
 }
 
 #main-intro-slider{
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("/assets/images/book-wallpaper.jpg") !important;
+    background: linear-gradient(rgba(0,0,0,$main-slider-bg-darkness), rgba(0,0,0,$main-slider-bg-darkness)), url("/assets/images/book-wallpaper.jpg") !important;
     background-size: cover !important;
 
     &-image {
         position: static;
         img{
             margin: 0px auto;
-            height: 500px;
+            height: $main-slider-img-height;
         }
     }
     &-info{
         h1, p{
-            color: white;
+            color: $default-text-color;
         }
         h1{
-            font-size: 42px;
+            font-size: 2.1rem;
         }
     }
 }
