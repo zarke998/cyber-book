@@ -117,12 +117,14 @@ html{
 
 // SHOP
 //////////////////////////////////////////////////////////////////////////////////////////
-#main-intro{
-    background-image: url("/assets/images/books-ultrawide.jpg");
+.main-intro{
     background-size: cover;
-    h2{
+    .hero-cap h2{
         color: $default-text-color;
     }
+}
+#shop-main-intro{
+    background-image: url("/assets/images/books-ultrawide.jpg");
 }
 #shop-upper-controls{
     padding-bottom: 5px;

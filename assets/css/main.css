@@ -99,13 +99,16 @@ html {
   width: 175px;
 }
 
-#main-intro {
-  background-image: url("/assets/images/books-ultrawide.jpg");
+.main-intro {
   background-size: cover;
 }
 
-#main-intro h2 {
+.main-intro .hero-cap h2 {
   color: white;
+}
+
+#shop-main-intro {
+  background-image: url("/assets/images/books-ultrawide.jpg");
 }
 
 #shop-upper-controls {

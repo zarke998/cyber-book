@@ -1,7 +1,9 @@
 <?php 
     function getMainIntro($title){
+        $container_identifier = strtolower($title)."-main-intro";
+
         return '
-        <div id="main-intro" class="slider-area ">
+        <div id="'.$container_identifier.'" class="main-intro slider-area ">
         <!-- Mobile Menu -->
             <div class="single-slider slider-height2 d-flex align-items-center">
                 <div class="container">
