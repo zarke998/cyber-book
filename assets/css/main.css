@@ -95,6 +95,10 @@ html {
   color: black;
 }
 
+.footer-logo img {
+  width: 175px;
+}
+
 .pt-8 {
   padding-top: 100px;
 }

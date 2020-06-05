@@ -9,11 +9,11 @@
                         <div class="single-footer-caption mb-30">
                              <!-- logo -->
                             <div class="footer-logo">
-                                <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                                <a href="index.html"><img src="assets/img/logo2.png" alt=""></a>
                             </div>
                             <div class="footer-tittle">
                                 <div class="footer-pera">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
+                                    <p>We are an online bookstore that provides quality reading material. Find books for your taste for a low price.</p>
                                </div>
                             </div>
                         </div>
@@ -24,10 +24,11 @@
                            <div class="footer-tittle">
                                <h4>Quick Links</h4>
                                <ul>
+                                   <li><a href="#">Home</a></li>
+                                   <li><a href="#">Shop</a></li>
+                                   <li><a href="#">Contact</a></li>
                                    <li><a href="#">About</a></li>
-                                   <li><a href="#"> Offers & Discounts</a></li>
-                                   <li><a href="#"> Get Coupon</a></li>
-                                   <li><a href="#">  Contact Us</a></li>
+                                   <li><a href="#">Documentation</a></li>
                                </ul>
                            </div>
                        </div>
@@ -35,12 +36,11 @@
                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
                        <div class="single-footer-caption mb-50">
                            <div class="footer-tittle">
-                               <h4>New Products</h4>
+                               <h4>Legal</h4>
                                <ul>
-                                   <li><a href="#">Woman Cloth</a></li>
-                                   <li><a href="#">Fashion Accessories</a></li>
-                                   <li><a href="#"> Man Accessories</a></li>
-                                   <li><a href="#"> Rubber made Toys</a></li>
+                                   <li><a href="#">Privacy</a></li>
+                                   <li><a href="#">Terms of Use</a></li>
+                                   <li><a href="#"> DCMA</a></li>
                                </ul>
                            </div>
                        </div>
@@ -48,13 +48,12 @@
                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
                        <div class="single-footer-caption mb-50">
                            <div class="footer-tittle">
-                               <h4>Support</h4>
+                               <h4>Contact</h4>
                                <ul>
-                                <li><a href="#">Frequently Asked Questions</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Report a Payment Issue</a></li>
+                                <li><a href="#">Send us an email</a></li>
+                                <li><a href="#">Business inquiry</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Web developer</a></li>
                             </ul>
                            </div>
                        </div>
@@ -72,10 +71,10 @@
                     <div class="footer-copy-right f-right">
                         <!-- social -->
                         <div class="footer-social">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-behance"></i></a>
-                            <a href="#"><i class="fas fa-globe"></i></a>
+                            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
