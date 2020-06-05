@@ -11,6 +11,7 @@ $main-shop-category-transition-speed: 0.1s;
 $main-most-popular-titles-img-height: 400px;
 $main-most-popular-titles-product-mb: 100px;
 
+$shop-filters-border: #e8e8e8;
 html{
     overflow-x: hidden;
     font-size: 20px;
@@ -133,7 +134,19 @@ html{
         }
     }
 }
-
+.shop-filters{
+    border-left: 1px solid $shop-filters-border;
+    .shop-filter{
+        margin-bottom: 20px;
+        ul{
+            li{
+                a{
+                    color: $default-text-color-dark;
+                }
+            }
+        }
+    }
+}
 // BOOTSTRAP EXTENSIONS
 .pt-8{
     padding-top: 100px;
