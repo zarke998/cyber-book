@@ -2,6 +2,7 @@
     define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 ?>
 
+<div id="shop-main">
 <section class="latest-product-area latest-padding">
     <div class="row px-4">
         <div class="col-9">
@@ -304,3 +305,4 @@
 <?php
     include ROOT."/views/fixed/bullet_points.php";
 ?>
+</div>

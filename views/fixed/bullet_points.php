@@ -1,4 +1,4 @@
-<div class="shop-method-area section-padding30 py-5">
+<div class="shop-method-area section-padding30 py-5 bullet-points">
     <div class="container">
         <div class="row d-flex justify-content-between">
             <div class="col-xl-3 col-lg-3 col-md-6">
