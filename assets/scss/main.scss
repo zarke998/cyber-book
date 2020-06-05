@@ -113,6 +113,21 @@ html{
         width: 175px;
     }
 }
+
+// SHOP
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#shop-upper-controls{
+    padding-bottom: 5px;
+    .pagination{
+        .page-link{
+            &:focus{
+                box-shadow: none;
+            }
+        }
+    }
+}
+
 // BOOTSTRAP EXTENSIONS
 .pt-8{
     padding-top: 100px;

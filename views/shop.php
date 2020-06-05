@@ -4,34 +4,41 @@
 
 <section class="latest-product-area latest-padding">
     <div class="container">
-        <div class="row product-btn d-flex justify-content-between">
-                <div class="properties__button">
-                    <!--Nav Button  -->
-                    <nav>                                                                                                
-                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">All</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">New</a>
-                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Featured</a>
-                            <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#nav-last" role="tab" aria-controls="nav-contact" aria-selected="false">Offer</a>
-                        </div>
-                    </nav>
-                    <!--End Nav Button  -->
+        <div id="shop-upper-controls" class="row product-btn d-flex justify-content-between">
+            <div class="select-this d-flex">
+                <div class="featured">
+                    <span>Sort by: </span>
                 </div>
-                <div class="select-this d-flex">
-                    <div class="featured">
-                        <span>Short by: </span>
+                <form action="#">
+                    <div class="select-itms">
+                        <select name="select" id="select1">
+                            <option value="">Featured</option>
+                            <option value="">Featured A</option>
+                            <option value="">Featured B</option>
+                            <option value="">Featured C</option>
+                        </select>
                     </div>
-                    <form action="#">
-                        <div class="select-itms">
-                            <select name="select" id="select1">
-                                <option value="">Featured</option>
-                                <option value="">Featured A</option>
-                                <option value="">Featured B</option>
-                                <option value="">Featured C</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
+                </form>
+            </div>
+            <nav aria-label="Pagination">
+                <ul class="pagination">
+                    <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
         <!-- Nav Card -->
         <div class="tab-content" id="nav-tabContent">
