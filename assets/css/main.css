@@ -99,6 +99,15 @@ html {
   width: 175px;
 }
 
+#main-intro {
+  background-image: url("/assets/images/books-ultrawide.jpg");
+  background-size: cover;
+}
+
+#main-intro h2 {
+  color: white;
+}
+
 #shop-upper-controls {
   padding-bottom: 5px;
 }
@@ -113,7 +122,7 @@ html {
 }
 
 .text-stroke-black-2 {
-  text-shadow: -2px -2px 0 #000,   2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  text-shadow: -2px 3px 0 #000, 2px -2px 0 #000, 2px 2px 0 #000, 2px 2px 0 #000;
 }
 
 .text-stroke-black-1 {

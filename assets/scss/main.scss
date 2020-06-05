@@ -116,7 +116,13 @@ html{
 
 // SHOP
 //////////////////////////////////////////////////////////////////////////////////////////
-
+#main-intro{
+    background-image: url("/assets/images/books-ultrawide.jpg");
+    background-size: cover;
+    h2{
+        color: $default-text-color;
+    }
+}
 #shop-upper-controls{
     padding-bottom: 5px;
     .pagination{
@@ -135,11 +141,11 @@ html{
 
 // STYLE CLASSES
 .text-stroke-black-2{
-  text-shadow:
-   -2px -2px 0 #000,  
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-     2px 2px 0 #000;
+    text-shadow: 
+        -2px 3px 0 #000,
+        2px -2px 0 #000,
+        2px 2px 0 #000,
+        2px 2px 0 #000;
 }
 .text-stroke-black-1{
     text-shadow:
