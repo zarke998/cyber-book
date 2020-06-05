@@ -137,6 +137,12 @@ html {
   padding-bottom: 0px !important;
 }
 
+/* #region CONTACT */
+#contact-main-intro {
+  background-image: url("/assets/images/book-ultrawide-2.jpg");
+}
+
+/* #endregion */
 .pt-8 {
   padding-top: 100px;
 }

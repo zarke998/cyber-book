@@ -155,12 +155,18 @@ html{
         padding-bottom: 0px !important;
     }
 }
+
+/* #region CONTACT */
+#contact-main-intro{
+    background-image: url("/assets/images/book-ultrawide-2.jpg");
+}
+/* #endregion */
+
 // BOOTSTRAP EXTENSIONS
 .pt-8{
     padding-top: 100px;
 }
-
-// STYLE CLASSES
+// STYLE CLASSE
 .text-stroke-black-2{
     text-shadow: 
         -2px 3px 0 #000,
