@@ -16,7 +16,7 @@
             $page_src = "views/shop.php";
             $page_title = "Shop";
             break;
-        case Pages::Home :
+        default : // Pages::Home
             $page_src = "views/home.php";
             $page_title = "Home";
             $main_intro_slider = true;
