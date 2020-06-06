@@ -161,6 +161,11 @@ html{
 #contact-main-intro{
     background-image: url("/assets/images/book-ultrawide-2.jpg");
 }
+#google-maps-contact{
+    iframe{
+        width: 100%;
+    }
+}
 /* #endregion */
 
 /* #region BOOTSTRAP */

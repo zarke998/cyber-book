@@ -7,6 +7,7 @@ html {
   width: 150px;
 }
 
+/* #region HOME */
 #main-intro-slider {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("/assets/images/book-wallpaper.jpg") !important;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/assets/images/book-wallpaper.jpg") !important;
@@ -99,6 +100,8 @@ html {
   width: 175px;
 }
 
+/* #endregion */
+/* #region SHOP */
 .main-intro {
   background-size: cover;
 }
@@ -137,16 +140,24 @@ html {
   padding-bottom: 0px !important;
 }
 
+/* #endregion */
 /* #region CONTACT */
 #contact-main-intro {
   background-image: url("/assets/images/book-ultrawide-2.jpg");
 }
 
+#google-maps-contact iframe {
+  width: 100%;
+}
+
 /* #endregion */
+/* #region BOOTSTRAP */
 .pt-8 {
   padding-top: 100px;
 }
 
+/* #endregion */
+/* #region STYLE CLASSES */
 .text-stroke-black-2 {
   text-shadow: -2px 3px 0 #000, 2px -2px 0 #000, 2px 2px 0 #000, 2px 2px 0 #000;
 }
@@ -166,4 +177,6 @@ html {
       -ms-user-select: none;
           user-select: none;
 }
+
+/* #endregion */
 /*# sourceMappingURL=main.css.map */
