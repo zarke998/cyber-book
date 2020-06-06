@@ -27,6 +27,10 @@
         case Pages::Login :
             $page_src = "views/login.php";
             $page_title = "Login";
+            break;
+        case Pages::Register :
+            $page_src = "views/register.php";
+            $page_title = "Register";
             break;            
         default : // Pages::Home:
             $page_src = "views/home.php";

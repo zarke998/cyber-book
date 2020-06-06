@@ -228,6 +228,19 @@ html {
 }
 
 /* #endregion */
+/* #region REGISTER */
+#register-main-intro {
+  background-image: url("/assets/images/book-ultrawide-4.jpg");
+}
+
+#register-side-section {
+  width: 550px;
+  height: 600px;
+  background-image: url("/assets/images/book-wallpaper-1.jpg");
+  background-size: cover;
+}
+
+/* #endregion */
 /* #region BOOTSTRAP */
 .pt-8 {
   padding-top: 100px;
