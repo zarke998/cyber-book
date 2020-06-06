@@ -241,7 +241,13 @@ html {
 }
 
 /* #endregion */
-/* #region BOOTSTRAP */
+/* #region BOOTSTRAP CUSTOMIZATIONS */
+.invalid-feedback {
+  margin-left: 15px;
+}
+
+/* #endregion */
+/* #region SPACING CLASSES */
 .pt-8 {
   padding-top: 100px;
 }

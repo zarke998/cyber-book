@@ -6,7 +6,10 @@
     $page_id = Pages::Home;
     $page_src;
     $page_title;
+
     $main_intro_slider = false;
+    
+    $scripts = [];
 
     if(isset($_GET["page"]))
         $page_id = $_GET["page"];
@@ -31,11 +34,13 @@
         case Pages::Register :
             $page_src = "views/register.php";
             $page_title = "Register";
-            break;            
+            $scripts = ["/assets/js/cyber-book/register.js"];
+            break;
         default : // Pages::Home:
             $page_src = "views/home.php";
             $page_title = "Home";
             $main_intro_slider = true;
+            $scripts = [];
             break;
     }
     
@@ -56,5 +61,7 @@
 
 
     include $page_src;
-    include "views/fixed/footer.php"
+
+    include "views/fixed/footer.php";
+    echo getFooter($scripts);
 ?>

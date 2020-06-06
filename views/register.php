@@ -1,7 +1,9 @@
 <?php 
     define("ROOT",$_SERVER["DOCUMENT_ROOT"]);
 
-    include_once ROOT."/models/pages.php";
+    require_once ROOT."/models/pages.php";
+
+    require_once ROOT."/models/account/register/register_processor.php";
 ?>
 
 <section class="login_part section_padding ">
@@ -21,18 +23,27 @@
                     <div class="login_part_form_iner">
                         <h3>Need an account? <br>
                             Please fill in the form bellow</h3>
-                        <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                        <form class="row contact_form" action="index.php?page=<?= Pages::Register ?>" method="post" onsubmit="return validateRegister()">
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="name" name="name" value=""
+                                <input type="text" class="form-control" id="registerEmail" name="email" value=""
                                     placeholder="Email">
+                                    <div class="invalid-feedback">
+                                        Looks good!
+                                    </div>
                             </div>
                             <div class="col-md-12 form-group p_star">
-                                <input type="password" class="form-control" id="password" name="password" value=""
+                                <input type="password" class="form-control" id="registerPassword" name="password" value=""
                                     placeholder="Password">
+                                <div class="invalid-feedback">
+                                    Looks good!
+                                </div>
                             </div>
                             <div class="col-md-12 form-group p_star">
-                                <input type="password" class="form-control" id="password" name="password" value=""
+                                <input type="password" class="form-control" id="registerConfirmPassword" value=""
                                     placeholder="Confirm password">
+                                <div class="invalid-feedback">
+                                    Looks good!
+                                </div>
                             </div>
                             <div class="col-md-12 form-group">
                                 <button type="submit" value="submit" class="btn_3">
