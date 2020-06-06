@@ -166,6 +166,11 @@ html{
         width: 100%;
     }
 }
+.boxed-btn:hover{
+    background: #0052d8;
+    border: 1px solid #0052d8;
+    color: $default-text-color !important;
+}
 /* #endregion */
 
 /* #region BOOTSTRAP */
