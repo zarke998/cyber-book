@@ -20,7 +20,7 @@ html{
 .logo a img{
     width: $logo-width;
 }
-
+/* #region HOME */
 #main-intro-slider{
     background: linear-gradient(rgba(0,0,0,$main-slider-bg-darkness), rgba(0,0,0,$main-slider-bg-darkness)), url("/assets/images/book-wallpaper.jpg") !important;
     background-size: cover !important;
@@ -114,9 +114,9 @@ html{
         width: 175px;
     }
 }
+/* #endregion */
 
-// SHOP
-//////////////////////////////////////////////////////////////////////////////////////////
+/* #region SHOP */
 .main-intro{
     background-size: cover;
     .hero-cap h2{
@@ -155,6 +155,7 @@ html{
         padding-bottom: 0px !important;
     }
 }
+/* #endregion */
 
 /* #region CONTACT */
 #contact-main-intro{
@@ -162,11 +163,13 @@ html{
 }
 /* #endregion */
 
-// BOOTSTRAP EXTENSIONS
+/* #region BOOTSTRAP */
 .pt-8{
     padding-top: 100px;
 }
-// STYLE CLASSE
+/* #endregion */
+
+/* #region STYLE CLASSES */
 .text-stroke-black-2{
     text-shadow: 
         -2px 3px 0 #000,
@@ -192,5 +195,4 @@ html{
     cursor: pointer;
     user-select: none;
 }
-
-// ANIMATIONS
+/* #endregion */
