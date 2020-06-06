@@ -1,6 +1,9 @@
+$color-primary-light: #2577fd;
+
 $logo-width: 150px;
 $default-text-color: rgb(255,255,255);
 $default-text-color-dark: rgb(0,0,0);
+$default-text-color-grey: #506172;
 
 $main-slider-bg-darkness: 0.3;
 $main-slider-img-height: 500px;
@@ -12,6 +15,14 @@ $main-most-popular-titles-img-height: 400px;
 $main-most-popular-titles-product-mb: 100px;
 
 $shop-filters-border: #e8e8e8;
+
+$about-info-padding-top: 10px;
+$about-social-icons-size: 36px;
+$about-social-icons-horiz-margins: 5px;
+//socials
+$twitter-color: #00acee;
+$instagram-color: #eb1dbe;
+$youtube-color: #e01e18;
 html{
     overflow-x: hidden;
     font-size: 20px;
@@ -170,6 +181,61 @@ html{
     background: #0052d8;
     border: 1px solid #0052d8;
     color: $default-text-color !important;
+}
+/* #endregion */
+
+/* #region ABOUT */
+#about-main-intro{
+    background-image: url("/assets/images/book-ultrawide-3.jpg");
+}
+#about-info{
+    padding-top: $about-info-padding-top;
+    p{
+        font-size: 1rem;
+    }
+    &-links{
+        p{
+            a{
+                color: $default-text-color-grey;
+                &:hover{
+                    text-decoration: underline;
+                    color: $color-primary-light;
+                }
+            }
+        }
+    }
+}
+#about-socials{
+    &-links{
+        i{
+            margin: 0px $about-social-icons-horiz-margins;
+            font-size: $about-social-icons-size;
+            &.fa-facebook-square{
+                color: darken($color-primary-light, 5%);
+                &:hover{
+                    color: darken($color-primary-light, 10%);
+                }
+            }
+            &.fa-twitter-square{
+                color: $twitter-color;
+                &:hover{
+                    color: darken($twitter-color, 5%);
+                }
+            }
+            &.fa-instagram{
+                color: $instagram-color;
+                &:hover{
+                    color: darken($instagram-color, 5%);
+                }
+            }
+            &.fa-youtube{
+                color: $youtube-color;
+                &:hover{
+                    color: darken($youtube-color, 5%);
+                }
+            }
+        }
+    }
 }
 /* #endregion */
 

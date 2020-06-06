@@ -157,6 +157,66 @@ html {
 }
 
 /* #endregion */
+/* #region ABOUT */
+#about-main-intro {
+  background-image: url("/assets/images/book-ultrawide-3.jpg");
+}
+
+#about-info {
+  padding-top: 10px;
+}
+
+#about-info p {
+  font-size: 1rem;
+}
+
+#about-info-links p a {
+  color: #506172;
+}
+
+#about-info-links p a:hover {
+  text-decoration: underline;
+  color: #2577fd;
+}
+
+#about-socials-links i {
+  margin: 0px 5px;
+  font-size: 36px;
+}
+
+#about-socials-links i.fa-facebook-square {
+  color: #0c67fd;
+}
+
+#about-socials-links i.fa-facebook-square:hover {
+  color: #025bed;
+}
+
+#about-socials-links i.fa-twitter-square {
+  color: #00acee;
+}
+
+#about-socials-links i.fa-twitter-square:hover {
+  color: #009ad5;
+}
+
+#about-socials-links i.fa-instagram {
+  color: #eb1dbe;
+}
+
+#about-socials-links i.fa-instagram:hover {
+  color: #db13af;
+}
+
+#about-socials-links i.fa-youtube {
+  color: #e01e18;
+}
+
+#about-socials-links i.fa-youtube:hover {
+  color: #c91b16;
+}
+
+/* #endregion */
 /* #region BOOTSTRAP */
 .pt-8 {
   padding-top: 100px;

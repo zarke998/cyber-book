@@ -20,6 +20,10 @@
             $page_src = "views/contact.php";
             $page_title = "Contact";
             break;
+        case Pages::About :
+            $page_src = "views/about.php";
+            $page_title = "About";
+            break;            
         default : // Pages::Home:
             $page_src = "views/home.php";
             $page_title = "Home";
