@@ -1,5 +1,6 @@
 <?php 
-    define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
+    if(!defined("ROOT"))
+        define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 ?>
 
 <div id="shop-main">

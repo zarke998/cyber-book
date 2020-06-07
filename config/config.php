@@ -1,5 +1,6 @@
 <?php
-    define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
+    if(!defined("ROOT"))
+        define("ROOT", $_SERVER["DOCUMENT_ROOT"]);  
 
     define("ENV_FILE", ROOT."/config/.env");
     define("SEPARATOR", "&");
@@ -21,6 +22,4 @@
                     return "";
         }
     }
-
-    echo SERVER. " " .DBNAME. " ". USERNAME. " ". PASSWORD;
 ?>
