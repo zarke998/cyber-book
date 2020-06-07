@@ -17,7 +17,7 @@
             $data = explode("=", $pair);
             if($data[0] == $key)
                 if(count($data) == 2)
-                    return $data[1];
+                    return trim($data[1]);
                 else
                     return "";
         }
