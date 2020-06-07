@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     include "models/pages.php";
 
     $website_name = "CyberBook";
@@ -64,4 +65,6 @@
 
     include "views/fixed/footer.php";
     echo getFooter($scripts);
+
+    ob_end_flush();
 ?>

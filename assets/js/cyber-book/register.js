@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+    $("#registerBtn").click(validateRegister);
 });
 
 function validateRegister(){
@@ -15,20 +15,36 @@ function validateRegister(){
     if(!emailReg.test($email.val())){
         $email.next().show();
         $email.next().text("Invalid email format. Email must start with a letter and contain only letters and numbers.");
-        return false;
+        return;
     }
     if(!passwordReg.test($password.val())){
         $password.next().show();
         $password.next().text("Invalid password format. Password must contain at least one lowercase and uppercase letter, and a number. And it must be at least 8 characters long.");
-        return false;
+        return;
     }
     if($password.val() != $passwordConfirm.val()){
         $passwordConfirm.next().show();
         $passwordConfirm.next().show().text("Passwords do not match.");
-        return false;
+        return;
     }
 
-    return true;
+    $.ajax({
+        url: "index.php?page=5",
+        method: "POST",
+        dataType: "json",
+        data: {
+            email: $email.val(),
+            password: $password.val(),
+            "register": "true"
+        },
+        success: function(data){
+            alert(data.message);
+        },
+        error: function(xhr,errType,errMsg){
+            var errJson = JSON.parse(xhr.responseText);
+            alert(errJson.message);
+        }
+    });
 }
 
 function hideFormFeedbacks(){

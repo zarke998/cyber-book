@@ -5,6 +5,23 @@
     require_once ROOT."/models/pages.php";
 
     require_once ROOT."/models/account/register/register_processor.php";
+
+    if(isset($_POST["register"])){
+        ob_clean();
+
+        header("Content-Type: application/json");
+        $err_json = "";
+
+        if(register($_POST["email"], $_POST["password"], $err_json)){
+            http_response_code(200);
+            echo json_encode(["message" => "Register successful. Please confirm your email via activation link in your inbox."]);            
+        }
+        else{
+            echo $err_json;
+        }
+        ob_end_flush();
+        exit;
+    }
 ?>
 
 <section class="login_part section_padding ">
@@ -24,7 +41,7 @@
                     <div class="login_part_form_iner">
                         <h3>Need an account? <br>
                             Please fill in the form bellow</h3>
-                        <form class="row contact_form" action="index.php?page=<?= Pages::Register ?>" method="post" onsubmit="return validateRegister()">
+                        <form class="row contact_form" action="index.php?page=<?= Pages::Register ?>" method="post">
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="registerEmail" name="email" value=""
                                     placeholder="Email">
@@ -47,7 +64,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12 form-group">
-                                <button type="submit" value="submit" class="btn_3">
+                                <button id="registerBtn" type="button" name="submit" value="submit" class="btn_3">
                                     register
                                 </button>
                             </div>
