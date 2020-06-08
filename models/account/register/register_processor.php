@@ -37,7 +37,7 @@
             $stm->bindParam(":email", $emailSlashed);
             $stm->bindParam(":password", $password);
             $stm->bindParam(":activation_key", $activation_key);
-            $stm->bindValue(":is_confirmed", true, PDO::PARAM_BOOL);
+            $stm->bindValue(":is_confirmed", false, PDO::PARAM_BOOL);
             $stm->bindValue(":role_id", 2, PDO::PARAM_INT); // User role
 
 
