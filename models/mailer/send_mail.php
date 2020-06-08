@@ -2,6 +2,7 @@
     if(!defined("ROOT"))
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
+    require_once ROOT."/config/config.php";
     require_once ROOT."/dependencies/composer/vendor/autoload.php";
     use PHPMailer\PHPMailer\PHPMailer;
 
@@ -11,8 +12,8 @@
         $mailer->isSMTP();
         $mailer->Host = 'smtp.gmail.com';
         $mailer->SMTPAuth = true;
-        $mailer->Username = 'cyber.book123@gmail.com';
-        $mailer->Password = 'dktvbpisdksdvcib'; //Google generated app password
+        $mailer->Username = MAIL_USERNAME;
+        $mailer->Password = MAIL_PASSWORD; //Google generated app password
         $mailer->SMTPSecure = 'ssl';
         $mailer->Port = 465;
 

@@ -20,7 +20,7 @@
             return false;
         }
         
-        
+
         try{
             if(checkUserRegistered($email)){
                 http_response_code(409); // 409 - Conflict
@@ -61,7 +61,6 @@
             else{
                 $err_json = json_encode(["message" => "Error sending activation link. Try resending activation key."]);
                 // log $send_error
-
                 return false;
             }
 

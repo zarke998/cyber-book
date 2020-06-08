@@ -4,7 +4,7 @@
 
     require_once ROOT."/config/connection.php";
 
-    function activateAccount($uid, $activation_key){
+    function activate_account($uid, $activation_key){
         global $conn;
 
         $query = "UPDATE users

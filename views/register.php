@@ -27,7 +27,7 @@
         exit;
     }
     else if(isset($_GET["uid"]) and isset($_GET["activation_key"])){
-        if(activateAccount($_GET["uid"], $_GET["activation_key"])){
+        if(activate_account($_GET["uid"], $_GET["activation_key"])){
             ob_clean();
 
             $_SESSION["activation_successful"] = true;
@@ -81,6 +81,7 @@
                                     Looks good!
                                 </div>
                             </div>
+                            <p id="resendActivationLink" class="ml-4">Having trouble activating account? Try <a href="">resending activation link.</a></p>
                             <div class="col-md-12 form-group">
                                 <button id="registerBtn" type="button" name="submit" value="submit" class="btn_3">
                                     register

@@ -259,6 +259,12 @@ html{
     background-image: url("/assets/images/book-wallpaper-1.jpg");
     background-size: cover;
 }
+#resendActivationLink{
+    a{
+        color: $color-primary-light;
+        text-decoration: underline;
+    }
+}
 /* #endregion */
 
 /* #region BOOTSTRAP CUSTOMIZATIONS */
