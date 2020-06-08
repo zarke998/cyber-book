@@ -3,7 +3,6 @@
         define("ROOT",$_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/models/pages.php";
-
     require_once ROOT."/models/account/register/register_processor.php";
 
     if(isset($_POST["register"])){
@@ -14,11 +13,12 @@
 
         if(register($_POST["email"], $_POST["password"], $err_json)){
             http_response_code(200);
-            echo json_encode(["message" => "Register successful. Please confirm your email via activation link in your inbox."]);            
+            echo json_encode(["message" => "Register successful. Please confirm your email via activation link in your inbox."]);
         }
         else{
             echo $err_json;
         }
+
         ob_end_flush();
         exit;
     }
