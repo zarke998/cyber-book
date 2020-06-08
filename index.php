@@ -31,6 +31,7 @@
         case Pages::Login :
             $page_src = "views/login.php";
             $page_title = "Login";
+            $scripts = ["/assets/js/cyber-book/login.js"];
             break;
         case Pages::Register :
             $page_src = "views/register.php";

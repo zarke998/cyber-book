@@ -4,7 +4,27 @@
     if(!defined("ROOT"))
         define("ROOT",$_SERVER["DOCUMENT_ROOT"]);
     include_once ROOT."/models/pages.php";
+    require_once ROOT."/models/account/login/login_processor.php";
+    // require_once ROOT."/config/config.php";
     
+    if(isset($_POST["login"])){
+        ob_clean();
+
+        header("Content-Type: application/json");
+
+        $err_json = "";
+        if(login($_POST["email"], $_POST["password"], $err_json)){
+            http_response_code(200);
+            echo json_encode(["message" => "Login successful."]);
+        }
+        else{
+            echo $err_json;
+        }
+
+        ob_end_flush();
+        exit;
+    }
+
 ?>
 
 <section class="login_part section_padding ">
@@ -24,7 +44,7 @@
                     <div class="login_part_form_iner">
                         <h3>Welcome Back ! <br>
                             Please Sign in now</h3>
-                        <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                        <form class="row contact_form" action="#" method="post">
                             <?php 
                                 if(isset($_SESSION["activation_successful"])): ?>
                                 <div class="valid-feedback d-block ml-4">
@@ -36,22 +56,23 @@
                             ?>
                             
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="name" name="name" value=""
+                                <input type="text" class="form-control" id="loginEmail" name="email" value=""
                                     placeholder="Username">
+                                <div class="invalid-feedback">
+                                    Looks good!
+                                </div>
                             </div>
                             <div class="col-md-12 form-group p_star">
-                                <input type="password" class="form-control" id="password" name="password" value=""
+                                <input type="password" class="form-control" id="loginPassword" name="password" value=""
                                     placeholder="Password">
+                                    <div class="invalid-feedback">
+                                    Looks good!
+                                </div>
                             </div>
                             <div class="col-md-12 form-group">
-                                <div class="creat_account d-flex align-items-center">
-                                    <input type="checkbox" id="f-option" name="selector">
-                                    <label for="f-option">Remember me</label>
-                                </div>
-                                <button type="submit" value="submit" class="btn_3">
+                                <button id="loginBtn" type="button" value="on" class="btn_3">
                                     log in
                                 </button>
-                                <a class="lost_pass" href="#">forget password?</a>
                             </div>
                         </form>
                     </div>
