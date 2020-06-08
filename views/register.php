@@ -1,9 +1,13 @@
 <?php 
+    session_start();
+
     if(!defined("ROOT"))
         define("ROOT",$_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/models/pages.php";
+    require_once ROOT."/config/config.php";
     require_once ROOT."/models/account/register/register_processor.php";
+    require_once ROOT."/models/account/register/register_activator.php";
 
     if(isset($_POST["register"])){
         ob_clean();
@@ -21,6 +25,20 @@
 
         ob_end_flush();
         exit;
+    }
+    else if(isset($_GET["uid"]) and isset($_GET["activation_key"])){
+        if(activateAccount($_GET["uid"], $_GET["activation_key"])){
+            ob_clean();
+
+            $_SESSION["activation_successful"] = true;
+            header("Location: index.php?page=".Pages::Login);
+
+            ob_end_flush();
+            exit;
+        }
+        else{
+            $activation_error_msg = "Error activating account. Try resending activation link.";
+        }
     }
 ?>
 
@@ -68,6 +86,12 @@
                                     register
                                 </button>
                             </div>
+                            <?php 
+                                if(isset($activation_error_msg)): ?>
+                                <div class="invalid-feedback d-block">
+                                    <?= $activation_error_msg ?>
+                                </div>
+                            <?php endif; ?>
                         </form>
                     </div>
                 </div>

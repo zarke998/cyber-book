@@ -2,6 +2,8 @@
     if(!defined("ROOT"))
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);  
 
+    define("BASE_URL", "localhost");
+
     define("ENV_FILE", ROOT."/config/.env");
     define("SEPARATOR", "&");
 

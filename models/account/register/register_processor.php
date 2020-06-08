@@ -20,6 +20,7 @@
             return false;
         }
         
+        
         try{
             if(checkUserRegistered($email)){
                 http_response_code(409); // 409 - Conflict
@@ -49,6 +50,7 @@
             $uid = $conn->lastInsertId();
 
 
+            // Send activation link
             $regiserPage = Pages::Register;
             $mailBody = '<h2>Please activate your account by clicking on the link below.</h2>
                         <p>Click here: <a href="localhost/index.php?page='.$regiserPage.'&uid='.$uid.'&activation_key='.$activation_key.'"> activation link.</a>';
@@ -86,8 +88,5 @@
             return true;
 
         return false;
-    }
-    function sendActivationLink($mail, $activation_key){
-
     }
 ?>

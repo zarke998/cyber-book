@@ -1,7 +1,10 @@
 <?php 
+    session_start();
+
     if(!defined("ROOT"))
         define("ROOT",$_SERVER["DOCUMENT_ROOT"]);
     include_once ROOT."/models/pages.php";
+    
 ?>
 
 <section class="login_part section_padding ">
@@ -22,6 +25,16 @@
                         <h3>Welcome Back ! <br>
                             Please Sign in now</h3>
                         <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                            <?php 
+                                if(isset($_SESSION["activation_successful"])): ?>
+                                <div class="valid-feedback d-block ml-4">
+                                    Account activated successfuly. Please login.
+                                </div>
+
+                            <?php endif;
+                                unset($_SESSION["activation_successful"]);
+                            ?>
+                            
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="name" name="name" value=""
                                     placeholder="Username">
