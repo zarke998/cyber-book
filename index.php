@@ -21,6 +21,11 @@
     $admin_pages = [Pages::Admin, Pages::Admin_Add_Book, Pages::Admin_Update_Book, Pages::Admin_Delete_Book];
 
     switch($page_id){
+        case Pages:: Home :
+            $page_src = "views/home.php";
+            $page_title = "Home";
+            $main_intro_slider = true;
+            break;
         case Pages::Shop :
             $page_src = "views/shop.php";
             $page_title = "Shop";
@@ -47,10 +52,11 @@
             $page_src = "views/admin/admin.php";
             $page_title = "Admin";
             break;
-        default : // Pages::Home:
-            $page_src = "views/home.php";
-            $page_title = "Home";
-            $main_intro_slider = true;
+        default : // 404
+            $page_src = "views/error_page.php";
+            $page_title = "Error";
+            $error_title = "404 - Page not found.";
+            $error_msg = "We are sorry, the page you are looking for doesn't exist.";
             break;
     }
 
