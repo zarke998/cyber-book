@@ -1,4 +1,7 @@
 <?php
+    if(session_status() == PHP_SESSION_NONE)
+        session_start();    
+
     ob_start();
     include "models/pages.php";
 
@@ -37,6 +40,11 @@
             $page_src = "views/register.php";
             $page_title = "Register";
             $scripts[] = "/assets/js/cyber-book/register.js";
+            break;
+        case Pages::Admin :
+            $page_src = "views/admin/admin.php";
+            $page_title = "Admin";
+            // $scripts[] = "/assets/js/cyber-book/register.js";
             break;
         default : // Pages::Home:
             $page_src = "views/home.php";

@@ -6,5 +6,6 @@
         const About = 3;
         const Login = 4;
         const Register = 5;
+        const Admin = 6;
     }
 ?>
