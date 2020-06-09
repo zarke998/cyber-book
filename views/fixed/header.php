@@ -67,7 +67,7 @@
                                         <ul id="navigation">                                                                                                                                    
                                             <?php 
                                                 require_once ROOT."/models/menu/select.php";
-                                                if(isset($_SESSION["user"]))
+                                                if(isset($_SESSION["user"]) and $_SESSION["user"]->role_id == 1)
                                                     $menu = get_menu_by_name("header-admin");
                                                 else
                                                     $menu = get_menu_by_name("header");
