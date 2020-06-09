@@ -18,7 +18,7 @@
     if(isset($_GET["page"]))
         $page_id = $_GET["page"];
 
-    // $admin_pages = [Pages::Admin, Pages::Admin_Add_Book, Pages::Admin_Update_Book, Pages::Admin_Delete_Book];
+    $admin_pages = [Pages::Admin, Pages::Admin_Add_Book, Pages::Admin_Update_Book, Pages::Admin_Delete_Book];
 
     switch($page_id){
         case Pages::Shop :
@@ -44,17 +44,8 @@
             $scripts[] = "/assets/js/cyber-book/register.js";
             break;
         case Pages::Admin :
-
-            if(isset($_SESSION["user"]) and $_SESSION["user"]->role_id == 1){
-                $page_src = "views/admin/admin.php";
-                $page_title = "Admin";
-            }
-            else{
-                $page_src = "views/error_page.php";
-                $page_title = "Error";
-                $error_title = "403 - Forbidden Access";
-                $error_msg = "We are sorry, but this page is forbidden for non-admin users.";
-            }
+            $page_src = "views/admin/admin.php";
+            $page_title = "Admin";
             break;
         default : // Pages::Home:
             $page_src = "views/home.php";
@@ -63,6 +54,12 @@
             break;
     }
 
+    if(in_array($page_id, $admin_pages) and (!isset($_SESSION["user"]) or $_SESSION["user"]->role_id != 1)){
+        $page_src = "views/error_page.php";
+        $page_title = "Error";
+        $error_title = "403 - Forbidden Access";
+        $error_msg = "We are sorry, but this page is forbidden for non-admin users.";
+    }
 
     include "views/fixed/head.php";
     echo getHead($website_name." | ".$page_title);
