@@ -18,6 +18,8 @@
     if(isset($_GET["page"]))
         $page_id = $_GET["page"];
 
+    // $admin_pages = [Pages::Admin, Pages::Admin_Add_Book, Pages::Admin_Update_Book, Pages::Admin_Delete_Book];
+
     switch($page_id){
         case Pages::Shop :
             $page_src = "views/shop.php";
@@ -60,7 +62,7 @@
             $main_intro_slider = true;
             break;
     }
-    
+
 
     include "views/fixed/head.php";
     echo getHead($website_name." | ".$page_title);

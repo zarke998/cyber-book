@@ -272,6 +272,27 @@ html{
     background-image: url("/assets/images/book-ultrawide-5.jpg");
     background-position: 0% 50%;
 }
+#admin-pages-percent{
+    ul{
+        li{
+            margin-bottom: 15px;
+        }
+    }
+}
+#admin-pages-last-24{
+    ul{
+        li{
+            margin-bottom: 15px;
+        }
+    }
+}
+#admin-log-window{
+    height: 400px;
+    overflow-y: scroll;
+
+    border: 1px solid $shop-filters-border;
+    padding: 10px;
+}
 /* #endregion */
 
 /* #region ERROR PAGE */

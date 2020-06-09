@@ -252,6 +252,21 @@ html {
   background-position: 0% 50%;
 }
 
+#admin-pages-percent ul li {
+  margin-bottom: 15px;
+}
+
+#admin-pages-last-24 ul li {
+  margin-bottom: 15px;
+}
+
+#admin-log-window {
+  height: 400px;
+  overflow-y: scroll;
+  border: 1px solid #e8e8e8;
+  padding: 10px;
+}
+
 /* #endregion */
 /* #region ERROR PAGE */
 #error-main-intro {
