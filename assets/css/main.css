@@ -268,6 +268,26 @@ html {
 }
 
 /* #endregion */
+/* #region ADMIN ADD BOOK */
+.book-prop-add input {
+  display: none;
+}
+
+.book-prop-add .nice-select {
+  width: 100%;
+}
+
+.book-prop-add i {
+  font-size: 32px;
+  margin-left: 5px;
+}
+
+.book-prop-add i:hover {
+  color: #2577fd;
+  cursor: pointer;
+}
+
+/* #endregion */
 /* #region ERROR PAGE */
 #error-main-intro {
   background-image: url("/assets/images/book-ultrawide-6.jpg");

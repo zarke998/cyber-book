@@ -295,6 +295,25 @@ html{
 }
 /* #endregion */
 
+/* #region ADMIN ADD BOOK */
+.book-prop-add{
+    input{
+        display: none;
+    }
+    .nice-select{
+        width: 100%;
+    }
+    i{
+        font-size: 32px;
+        margin-left: 5px;
+        &:hover{
+            color: $color-primary-light;
+            cursor: pointer;
+        }
+    }
+}
+/* #endregion */
+
 /* #region ERROR PAGE */
 #error-main-intro{
     background-image: url("/assets/images/book-ultrawide-6.jpg");
