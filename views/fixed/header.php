@@ -2,7 +2,10 @@
     if(session_status() == PHP_SESSION_NONE)
         session_start();
 
-    include_once "models/pages.php";
+    if(!defined("ROOT"))
+        define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
+
+    include_once ROOT."/models/pages.php";
 ?>
 
 <body>
@@ -61,11 +64,16 @@
                                 <!-- Main-menu -->
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav>                                                
-                                        <ul id="navigation">                                                                                                                                     
-                                            <li><a href="index.php">Home</a></li>
-                                            <li><a href="index.php?page=<?= Pages::Shop ?>">Shop</a></li>
-                                            <li><a href="index.php?page=<?= Pages::Contact ?>">Contact</a></li>
-                                            <li><a href="index.php?page=<?= Pages::About ?>">About</a></li>
+                                        <ul id="navigation">                                                                                                                                    
+                                            <?php 
+                                                require_once ROOT."/models/menu/select.php";
+                                                $menu = get_menu_by_name("header");
+
+                                                if($menu != null)
+                                                    foreach($menu as $menu_item): ?>
+                                                        <li><a href="<?= $menu_item->href ?>"><?= $menu_item->item_name ?></a></li>
+                                                    <?php endforeach; 
+                                            ?>
                                         </ul>
                                     </nav>
                                 </div>
