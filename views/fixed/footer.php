@@ -1,4 +1,9 @@
-<?php 
+<?php
+    if(!defined("ROOT"))
+        define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
+
+    require_once ROOT."/models/menu/select.php";
+    
     function getFooter($scripts){
 
         $scriptTags = "";
@@ -7,6 +12,21 @@
             foreach($scripts as $script){
                 $scriptTags.= "<script src=\"$script\"></script>";
             }
+
+        $quick_links = "";
+
+        $menu = get_menu_by_name("header");
+        foreach($menu as $menu_item){
+            $quick_links.= '<li><a href="'.$menu_item->href.'">'.$menu_item->item_name.'</a></li>';
+        }
+    
+
+        $contact = "";
+
+        $contact_menu = get_menu_by_name("footer-contact");
+        foreach($contact_menu as $menu_item){
+            $contact.= '<li><a href="'.$menu_item->href.'">'.$menu_item->item_name.'</a></li>';
+        }
 
         return '
         <footer>
@@ -34,11 +54,7 @@
                             <div class="footer-tittle">
                                 <h4>Quick Links</h4>
                                 <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Shop</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Documentation</a></li>
+                                    '.$quick_links.'
                                 </ul>
                             </div>
                         </div>
@@ -60,10 +76,7 @@
                             <div class="footer-tittle">
                                 <h4>Contact</h4>
                                 <ul>
-                                 <li><a href="#">Send us an email</a></li>
-                                 <li><a href="#">Business inquiry</a></li>
-                                 <li><a href="#">About us</a></li>
-                                 <li><a href="#">Web developer</a></li>
+                                 '.$contact.'
                              </ul>
                             </div>
                         </div>

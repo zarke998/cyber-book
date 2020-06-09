@@ -10,7 +10,7 @@
 
     $main_intro_slider = false;
     
-    $scripts = [];
+    $scripts = ["/assets/js/cyber-book/main.js"];
 
     if(isset($_GET["page"]))
         $page_id = $_GET["page"];
@@ -31,18 +31,17 @@
         case Pages::Login :
             $page_src = "views/login.php";
             $page_title = "Login";
-            $scripts = ["/assets/js/cyber-book/login.js"];
+            $scripts[] = "/assets/js/cyber-book/login.js";
             break;
         case Pages::Register :
             $page_src = "views/register.php";
             $page_title = "Register";
-            $scripts = ["/assets/js/cyber-book/register.js"];
+            $scripts[] = "/assets/js/cyber-book/register.js";
             break;
         default : // Pages::Home:
             $page_src = "views/home.php";
             $page_title = "Home";
             $main_intro_slider = true;
-            $scripts = [];
             break;
     }
     

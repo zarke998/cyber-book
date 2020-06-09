@@ -1,5 +1,6 @@
-<?php 
-    define("ROOT",$_SERVER["DOCUMENT_ROOT"]);
+<?php
+    if(!defined("ROOT"))
+        define("ROOT",$_SERVER["DOCUMENT_ROOT"]);
 ?>
 
 <main>

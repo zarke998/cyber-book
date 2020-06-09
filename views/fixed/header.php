@@ -67,7 +67,10 @@
                                         <ul id="navigation">                                                                                                                                    
                                             <?php 
                                                 require_once ROOT."/models/menu/select.php";
-                                                $menu = get_menu_by_name("header");
+                                                if(isset($_SESSION["user"]))
+                                                    $menu = get_menu_by_name("header-admin");
+                                                else
+                                                    $menu = get_menu_by_name("header");
 
                                                 if($menu != null)
                                                     foreach($menu as $menu_item): ?>
