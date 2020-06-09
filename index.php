@@ -42,9 +42,17 @@
             $scripts[] = "/assets/js/cyber-book/register.js";
             break;
         case Pages::Admin :
-            $page_src = "views/admin/admin.php";
-            $page_title = "Admin";
-            // $scripts[] = "/assets/js/cyber-book/register.js";
+
+            if(isset($_SESSION["user"]) and $_SESSION["user"]->role_id == 1){
+                $page_src = "views/admin/admin.php";
+                $page_title = "Admin";
+            }
+            else{
+                $page_src = "views/error_page.php";
+                $page_title = "Error";
+                $error_title = "403 - Forbidden Access";
+                $error_msg = "We are sorry, but this page is forbidden for non-admin users.";
+            }
             break;
         default : // Pages::Home:
             $page_src = "views/home.php";
