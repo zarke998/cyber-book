@@ -52,6 +52,10 @@
             $page_src = "views/admin/admin.php";
             $page_title = "Admin";
             break;
+        case Pages::Admin_Add_Book :
+            $page_src = "views/admin/admin_add_book.php";
+            $page_title = "Admin";
+            break;
         default : // 404
             $page_src = "views/error_page.php";
             $page_title = "Error";
