@@ -1,5 +1,6 @@
-<?php 
-    session_start();
+<?php
+    if(session_status() == PHP_SESSION_NONE)
+        session_start();
 
     if(!defined("ROOT"))
         define("ROOT",$_SERVER["DOCUMENT_ROOT"]);

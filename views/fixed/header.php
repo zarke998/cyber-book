@@ -1,4 +1,7 @@
 <?php 
+    if(session_status() == PHP_SESSION_NONE)
+        session_start();
+
     include_once "models/pages.php";
 ?>
 
@@ -87,7 +90,14 @@
                                             <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
                                         </div>
                                     </li>
-                                   <li class="d-none d-lg-block"> <a href="index.php?page=<?= Pages::Login ?>" class="btn header-btn">Sign in</a></li>
+                                    <?php
+                                        if(isset($_SESSION["user"])) : ?>
+                                            <li class="d-lg-block"> <a href="models/account/logout.php" class="btn header-btn">Logout</a></li>
+
+                                        <?php else: ?>
+                                            <li class="d-lg-block"> <a href="index.php?page=<?= Pages::Login ?>" class="btn header-btn">Sign in</a></li>
+
+                                        <?php endif; ?>
                                 </ul>
                             </div>
                             <!-- Mobile Menu -->
