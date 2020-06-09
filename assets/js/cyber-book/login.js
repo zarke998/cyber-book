@@ -32,8 +32,8 @@ function validateLogin(){
             login: true
         },
         success: function(data){
-            alert(data.message);
-            window.location.href = "index.php";
+            alert("Login successful.");
+            window.location.href = data.message;
         },
         error: function(xhr,errType,errMsg){
             var errJson = JSON.parse(xhr.responseText);

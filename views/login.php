@@ -16,7 +16,11 @@
         $err_json = "";
         if(login($_POST["email"], $_POST["password"], $err_json)){
             http_response_code(200);
-            echo json_encode(["message" => "Login successful."]);
+            
+            if($_SESSION["user"]->role_id == 1)
+                echo json_encode(["message" => "index.php?page=".Pages::Admin]);
+            else
+                echo json_encode(["message" => "index.php"]);
         }
         else{
             echo $err_json;
