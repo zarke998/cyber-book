@@ -11,6 +11,11 @@
     require_once ROOT."/models/author/add_author.php";
     require_once ROOT."/models/publisher/add_publisher.php";
     require_once ROOT."/models/back-type/add_back_type.php";
+
+    require_once ROOT."/models/image/resize_image.php";
+    require_once ROOT."/models/image/move_to_books_tmp.php";
+    require_once ROOT."/models/image/add_image.php";
+    require_once ROOT."/models/image/functions.php";
     
     header("Content-Type: application/json");
 
@@ -20,6 +25,7 @@
         exit;
     }
 
+#region POST variables
     $title = $_POST["bookTitle"];
 
     $description = $_POST["bookDescription"];
@@ -47,6 +53,17 @@
     $discount = $_POST["bookDiscount"];
 
     $coverImage = $_FILES["bookCoverImage"];
+#endregion
+
+#region variable validation
+    if($coverImage["size"] > 500000){
+        output_json("Image can not be bigger than 500KB.", 413); // 413 - Payload too large
+        exit;
+    }
+    else if(!in_array($coverImage["type"], ["image/png", "image/jpeg"])){
+        output_json("Image must be jpg or png.", 406); // 406 - Not acceptable
+        exit;
+    }
 
     if($languageNew != ""){
         $languageId = add_language($languageNew);
@@ -83,7 +100,8 @@
             exit;
         }
     }
-
+#endregion
+    
 
     try{
         $query = "INSERT INTO books(title, description, publish_date, num_of_pages, critics_rating, price, discount, language_id, back_type_id, author_id, publisher_id)
@@ -106,6 +124,50 @@
             exit;
         }
 
+        $bookId = $conn->lastInsertId();
+
+#region Generate thumbnails
+
+        $extension = get_extension_from_mime($coverImage["type"]);
+
+        $image_tmp_path = move_to_books_tmp($coverImage["tmp_name"],$extension);
+        $image_tmp = image_by_extension($image_tmp_path, $extension);
+
+        // Thumb paths
+        $thumbTime = hrtime(true);
+
+        $href_small = "/assets/images/books/small/$thumbTime.$extension";
+        $href_medium = "/assets/images/books/medium/$thumbTime.$extension";
+        $href_big = "/assets/images/books/big/$thumbTime.$extension";
+
+        $image_small_path = ROOT.$href_small;
+        $image_medium_path = ROOT.$href_medium;
+        $image_big_path = ROOT.$href_big;
+
+        //Resize images
+        $image_small = resize_image($image_tmp, IMAGE_SIZE_SMALL);
+        $image_medium = resize_image($image_tmp, IMAGE_SIZE_MEDIUM);
+        $image_big = resize_image($image_tmp, IMAGE_SIZE_BIG);
+        
+        // Save
+        image_save_by_extension($image_small, $image_small_path, $extension);
+        image_save_by_extension($image_medium, $image_medium_path, $extension);
+        image_save_by_extension($image_big, $image_big_path, $extension);
+
+        //Insert into database
+        add_image($bookId, $href_small, IMAGE_SIZE_SMALL);
+        add_image($bookId, $href_medium, IMAGE_SIZE_MEDIUM);
+        add_image($bookId, $href_big, IMAGE_SIZE_BIG);
+
+
+        imagedestroy($image_small);
+        imagedestroy($image_medium);
+        imagedestroy($image_big);
+
+        unlink($image_tmp_path);
+
+#endregion
+        
         output_json("Book added successfuly.", 200);
         exit;
     }
@@ -113,6 +175,8 @@
         output_json("Internal server error.", 500);
         exit;
     }
+
+    
 
     function output_json($message, $status_code){
         http_response_code($status_code);
