@@ -31,6 +31,14 @@ html{
 .logo a img{
     width: $logo-width;
 }
+
+select{
+    display: block;
+    padding: 5px;
+    border: 1px solid darken($shop-filters-border, 5%);
+    border-radius: 4px;
+}
+
 /* #region HOME */
 #main-intro-slider{
     background: linear-gradient(rgba(0,0,0,$main-slider-bg-darkness), rgba(0,0,0,$main-slider-bg-darkness)), url("/assets/images/book-wallpaper.jpg") !important;
@@ -295,7 +303,22 @@ html{
 }
 /* #endregion */
 
+/* #region ADMIN CONTENT */
+.admin-content-container{
+    select{
+        width: 100%;
+    }
+}
+#bookCover{
+    img{
+        display: none;
+        width: 50%;
+    }
+}
+/* #endregion */
+
 /* #region ADMIN ADD BOOK */
+
 .book-prop-add{
     input{
         display: none;
@@ -326,6 +349,11 @@ html{
 }
 /* #endregion */
 
+/* #region TEMPLATE CUSTOMIZATIONS */
+.nice-select{
+    display: none;
+}
+/* #endregion */
 /* #region SPACING CLASSES */
 .pt-8{
     padding-top: 100px;
