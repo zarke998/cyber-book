@@ -95,7 +95,7 @@
             <div class="section-tittle mb-30 ml-4">
                 <h2>Best by critics</h2>
             </div>
-            <div class="row px-4">
+            <div id="bestByCriticsContainer" class="row px-4">
                 <div class="col-lg-2 col-sm-4 col-6 px-4 px-lg-2 mb-4 best-by-critics-item text-center">
                     <img src="assets/images/book-cover-1.jpg" alt="">
                     <a href="#">Green Dress with details</a>

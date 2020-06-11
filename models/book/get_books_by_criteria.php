@@ -33,6 +33,12 @@
                 case 4:
                     $sortCrit = "ORDER BY price DESC ";
                     break;
+                case 5:
+                    $sortCrit = "ORDER BY critics_rating DESC ";
+                    break;
+                case 6:
+                    $sortCrit = "ORDER BY critics_rating ASC ";
+                    break;
                 default:
                     $sortCrit = "";
                     break;

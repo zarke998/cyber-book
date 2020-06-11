@@ -2,6 +2,8 @@ $(document).ready(function(){
     loadMostRecentTitles();
 
     $("#newsletterBtn").click(registerSubscriber);
+
+    loadBestByCriticsTitles();
 });
 
 //Most recent titles
@@ -100,6 +102,45 @@ function registerSubscriber(e){
         }
     });
 }
+
+//Best by critics
+function loadBestByCriticsTitles(){
+    $.ajax({
+        url: "models/book/get_books_by_criteria.php",
+        method: "GET",
+        dataType: "json",
+        data: {
+            sortCrit: 5,
+            limit: 6,
+            offset: 0,
+            getBooksByCriteria: true
+        },
+        success: function(data){
+            populateBestByCriticsTitles(data);
+        },
+        error: function(xhr, errType, errMsg){
+            var data = JSON.parse(xhr.responseText);
+            
+            alert(data.message);
+        }
+    });
+}
+function populateBestByCriticsTitles(books){
+    let $container = $("#bestByCriticsContainer");
+
+    let content = ``;
+
+    books.forEach(b => {
+        content+= `
+        <div class="col-lg-2 col-sm-4 col-6 px-4 px-lg-2 mb-4 best-by-critics-item text-center">
+            <img src="${b.cover_url}" alt="">
+            <a href="#" data-id=${b.bookId}>${b.title}</a>
+        </div>`;
+    });
+
+    $container.html(content);
+}
+
 
 function floatTo2Decimals(real){
     return Math.trunc(real*100)/100;
