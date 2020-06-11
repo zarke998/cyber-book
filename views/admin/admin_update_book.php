@@ -18,7 +18,7 @@
                 <select name="bookId">
                     <option value="0">Select book:</option>
                     <?php 
-                        $books = get_all_books();
+                        $books = get_all_books(BOOK_TITLE_ONLY);
 
                         foreach($books as $b) : ?>
                             <option value="<?=$b->id?>"><?=$b->title?></option>
