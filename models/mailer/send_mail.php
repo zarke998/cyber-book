@@ -3,6 +3,7 @@
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/config/config.php";
+    
     require_once ROOT."/dependencies/composer/vendor/autoload.php";
     use PHPMailer\PHPMailer\PHPMailer;
 

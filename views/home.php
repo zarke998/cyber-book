@@ -17,36 +17,25 @@
                     </div>
                 </div>
                 <div id="main-shop-categories" class="row">
-                    <div class="col-xl-4 col-lg-6">
-                        <div class="single-category mb-30">
-                            <div class="category-img">
-                                <img src="assets/images/category-wallpapers/horror.jpg" alt="">
-                                <div class="category-caption">
-                                    <h2 class="text-stroke-black-1 mr-3">Horror</h2>
+                    <?php 
+                        require_once ROOT."/models/category/get_rand_categories.php";
+                        require_once ROOT."/models/utilities/shuffled_number_array.php";
+                        $categories_rand = get_rand_categories(3);
+
+                        $array_rand = generate_shuffled_number_array(3);
+
+                        for($i = 0; $i < 3; $i++): ?>
+                            <div class="col-xl-4 col-lg-6">
+                                <div class="single-category mb-30">
+                                    <div class="category-img category-random" data-id="<?=$categories_rand[$array_rand[$i]]->id?>">
+                                        <img src="/assets/images/category-wallpapers/wallpaper-<?=$array_rand[$i] + 1?>.jpg" alt="Category wallpaper">
+                                        <div class="category-caption">
+                                            <h2 class="text-stroke-black-1 mr-3"><?=$categories_rand[$array_rand[$i]]->name?></h2>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6">
-                        <div class="single-category mb-30">
-                            <div class="category-img">
-                                <img src="assets/images/category-wallpapers/horror.jpg" alt="">
-                                <div class="category-caption">
-                                    <h2 class="text-stroke-black-1 mr-3">Horror</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6">
-                        <div class="single-category mb-30">
-                            <div class="category-img">
-                                <img src="assets/images/category-wallpapers/horror.jpg" alt="">
-                                <div class="category-caption">
-                                    <h2 class="text-stroke-black-1 mr-3">Horror</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <?php endfor; ?>
                 </div>
             </div>
         </section>

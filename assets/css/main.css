@@ -87,6 +87,12 @@ select {
   font-size: 1rem;
 }
 
+.category-random img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 275px;
+}
+
 #newsletter-area {
   background-image: url("/assets/images/book-wallpaper-ultrawide.jpg");
   background-size: cover;
