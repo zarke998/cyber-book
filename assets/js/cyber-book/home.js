@@ -1,7 +1,10 @@
 $(document).ready(function(){
     loadMostRecentTitles();
+
+    $("#newsletterBtn").click(registerSubscriber);
 });
 
+//Most recent titles
 function loadMostRecentTitles(){
     $.ajax({
         url: "models/book/get_books_by_criteria.php",
@@ -23,11 +26,10 @@ function loadMostRecentTitles(){
         }
     });
 }
-
 function populateMostRecentTitles(books){
-    $container = $("#most-recent-titles");
+    let $container = $("#most-recent-titles");
 
-    var content = ``;
+    let content = ``;
 
     books.forEach(b => {
         content += `
@@ -50,9 +52,8 @@ function populateMostRecentTitles(books){
 
     $container.html(content);
 }
-
 function getBookPricesTags(book){
-    var tags = ``;
+    let tags = ``;
     if(book.discount == 0){
         tags+= `<li>$${book.price}</li>`;
     }
@@ -65,6 +66,39 @@ function getBookPricesTags(book){
     }
 
     return tags;
+}
+
+// Newsletter
+function registerSubscriber(e){
+    e.preventDefault();
+
+    let $email = $("#newsletterEmail");
+    let emailReg = /^[a-z]+[a-z\d]{2,}(\.[a-z\d]+)*@[a-z]{2,}(\.[a-z]{2,})+$/;
+
+    if(!emailReg.test($email.val())){
+        alert("Invalid email format. Email must start with a letter and contain only letters and numbers.");
+        return;
+    }
+
+    $.ajax({
+        url: "models/newsletter/register_subscriber.php",
+        method: "POST",
+        dataType: "json",
+        data: {
+            email: $email.val(),
+            registerSubscriberBtn: true
+        },
+        success: function(data){
+            alert(data.message);
+            $("#newsletterEmail").val("");
+        },
+        error: function(xhr, errType, errMsg){
+            var data = JSON.parse(xhr.responseText);
+            alert(data.message);
+
+            $("#newsletterEmail").val("");
+        }
+    });
 }
 
 function floatTo2Decimals(real){
