@@ -25,6 +25,7 @@
             $page_src = "views/home.php";
             $page_title = "Home";
             $main_intro_slider = true;
+            $scripts[] = "/assets/js/cyber-book/home.js";
             break;
         case Pages::Shop :
             $page_src = "views/shop.php";

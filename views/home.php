@@ -47,7 +47,7 @@
                     <!-- Section Tittle -->
                     <div class="col-12">
                         <div class="section-tittle mb-30">
-                            <h2>Most Popular Titles</h2>
+                            <h2>Most Recent Titles</h2>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                 <div class="tab-content" id="nav-tabContent">
                     <!-- card one -->
                     <div class="most-popular-titles tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        <div class="row">
+                        <div id="most-recent-titles" class="row">
                             <div class="col-xl-3 col-lg-4 col-md-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
