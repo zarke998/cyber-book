@@ -1,3 +1,12 @@
+<?php 
+    if(!defined("ROOT"))
+        define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
+
+    require_once ROOT."/models/book/get_book_rand_discount.php";
+
+    $book_rand_discount = get_book_rand_discount();
+?>
+
 <div class="slider-area ">
             <!-- Mobile Menu -->
             <div class="slider-active">
@@ -6,14 +15,14 @@
                         <div class="row d-flex justify-content-between pt-8 pb-5">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-none d-md-block">
                                 <div id="main-intro-slider-image" class="hero__img" data-animation="fadeIn" data-delay=".4s">
-                                    <img src="assets/images/book-cover-1.jpg" alt="">
+                                    <img src="<?=$book_rand_discount->cover_url?>" alt="">
                                 </div>
                             </div>
                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 mt-5">
                                 <div id="main-intro-slider-info" class="hero__caption">
-                                    <span data-animation="fadeInRight" data-delay=".4s">60% Discount</span>
-                                    <h1 class="text-stroke-black-2"data-animation="fadeInRight" data-delay=".6s">Heart Spring Mountain</h1>
-                                    <p class="mt-5" data-animation="fadeInRight" data-delay=".8s">Heart Spring Mountain” explores the buried emotions that surface when a woman, Vale, returns to her hometown after her drug-addicted mother, Bonnie, disappears in a hurricane. The story slowly weaves through several generations of the same family, exposing how the past influences the present</p>
+                                    <span data-animation="fadeInRight" data-delay=".4s"><?=$book_rand_discount->discount?>% Discount</span>
+                                    <h1 class="text-stroke-black-2"data-animation="fadeInRight" data-delay=".6s"><?=$book_rand_discount->title?></h1>
+                                    <p class="mt-5" data-animation="fadeInRight" data-delay=".8s"><?=$book_rand_discount->description?></p>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
                                         <a href="industries.html" class="btn hero-btn">Shop Now</a>
