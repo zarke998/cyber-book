@@ -7,6 +7,7 @@
 
     require_once ROOT."/config/connection.php";
 
+    require_once ROOT."/models/category/add_category.php";
     require_once ROOT."/models/language/add_language.php";
     require_once ROOT."/models/author/add_author.php";
     require_once ROOT."/models/publisher/add_publisher.php";
@@ -29,6 +30,9 @@
     $title = $_POST["bookTitle"];
 
     $description = $_POST["bookDescription"];
+
+    $categoryNew = $_POST["bookCategoryNew"];
+    $categoryId = $_POST["bookCategory"];
 
     $languageNew = $_POST["bookLanguageNew"];
     $languageId = $_POST["bookLanguage"];
@@ -74,6 +78,15 @@
         }
     }
 
+    if($categoryNew != ""){
+        $categoryId = add_category($categoryNew);
+    
+        if($categoryId == 0){
+            output_json("Internal server error.", 500);
+            exit;
+        }
+    }
+
     if($authorNew != ""){
         $authorId = add_author($authorNew);
 
@@ -104,8 +117,8 @@
     
 
     try{
-        $query = "INSERT INTO books(title, description, publish_date, num_of_pages, critics_rating, price, discount, language_id, back_type_id, author_id, publisher_id)
-        VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        $query = "INSERT INTO books(title, description, publish_date, num_of_pages, critics_rating, price, discount, language_id, back_type_id, author_id, publisher_id, category_id)
+        VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
         $stm = $conn->prepare($query);
         $stm->bindParam(1, $title);
         $stm->bindParam(2, $description);
@@ -118,6 +131,7 @@
         $stm->bindParam(9, $backTypeId);
         $stm->bindParam(10, $authorId);
         $stm->bindParam(11, $publisherId);
+        $stm->bindParam(12, $categoryId);
 
         if(!$stm->execute()){
             output_json("Internal server error.", 500);

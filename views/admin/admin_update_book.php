@@ -7,6 +7,7 @@
     require_once ROOT."/models/publisher/get_all.php";
     require_once ROOT."/models/back-type/get_all.php";
     require_once ROOT."/models/book/get_all.php";
+    require_once ROOT."/models/category/get_all.php";
 ?>
 
 <div id="admin-add-book-container" class="container admin-content-container">
@@ -33,6 +34,22 @@
         <div class="form-group row align-items-center">
             <span class="col-4">Description</span>
             <textarea class="form-control col-8" type="text" name="bookDescription"></textarea>
+        </div>
+        <div class="form-group row align-items-center">
+            <span class="col-4">Category</span>
+            <div class="col-8 px-0 d-flex align-items-center book-prop-add">
+                <input class="form-control" type="text" name="bookCategoryNew" placeholder="Add new category" />
+                <select name="bookCategory">
+                    <option value="0">Select category:</option>
+                    <?php 
+                        $categories = get_all_categories();
+
+                        foreach($categories as $c) : ?>
+                            <option value="<?=$c->id?>"><?=$c->name?></option>
+                    <?php endforeach; ?>
+                </select>
+                <i class="far fa-plus-square"></i>
+            </div>
         </div>
         <div class="form-group row align-items-center">
             <span class="col-4">Language</span>

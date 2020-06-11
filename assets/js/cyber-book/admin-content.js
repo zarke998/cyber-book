@@ -26,6 +26,9 @@ function addBook(e){
 
     var $description = $("textarea[name='bookDescription']");
 
+    var $categoryNew = $("input[name='bookCategoryNew']");
+    var $categoryId = $("select[name='bookCategory']");
+
     var $languageNew = $("input[name='bookLanguageNew']");
     var $languageId = $("select[name='bookLanguage']");
 
@@ -52,6 +55,15 @@ function addBook(e){
 
     if($title.val() == "" || $description.val() == "" || $numOfPages.val() == "" || $criticsRating.val() == "" || $price.val() == "" || $discount.val() == "" || $publishDate.val() == ""){
         alert("Please fill in the empty fields.");
+        return;
+    }
+
+    if($categoryId.is(":visible") && $categoryId.val() == "0"){
+        alert("Please select a category.");
+        return;
+    }
+    else if($categoryNew.is(":visible") && $categoryNew.val() == ""){
+        alert("Please fill in a new category.");
         return;
     }
 
@@ -133,6 +145,9 @@ function addBook(e){
 
     formData.append("bookDescription", $description.val());
 
+    formData.append("bookCategory", $categoryId.val());
+    formData.append("bookCategoryNew", $categoryNew.val());
+
     formData.append("bookLanguage", $languageId.val());
     formData.append("bookLanguageNew", $languageNew.val());
 
@@ -206,6 +221,8 @@ function populateUpdateFields(book){
     
     $("textarea[name='bookDescription']").val(book.description);
 
+    $("select[name='bookCategory']").val(book.category_id);
+
     $("select[name='bookLanguage']").val(book.language_id);
 
     $("select[name='bookAuthor']").val(book.author_id);
@@ -232,6 +249,9 @@ function updateBook(e){
     var $title = $("input[name='bookTitle']");
 
     var $description = $("textarea[name='bookDescription']");
+
+    var $categoryNew = $("input[name='bookCategoryNew']");
+    var $categoryId = $("select[name='bookCategory']");
 
     var $languageNew = $("input[name='bookLanguageNew']");
     var $languageId = $("select[name='bookLanguage']");
@@ -262,6 +282,15 @@ function updateBook(e){
 
     if($title.val() == "" || $description.val() == "" || $numOfPages.val() == "" || $criticsRating.val() == "" || $price.val() == "" || $discount.val() == "" || $publishDate.val() == ""){
         alert("Please fill in the empty fields.");
+        return;
+    }
+
+    if($categoryId.is(":visible") && $categoryId.val() == "0"){
+        alert("Please select a category.");
+        return;
+    }
+    else if($categoryNew.is(":visible") && $categoryNew.val() == ""){
+        alert("Please fill in a new category.");
         return;
     }
 
@@ -333,6 +362,9 @@ function updateBook(e){
     formData.append("bookTitle", $title.val());
 
     formData.append("bookDescription", $description.val());
+
+    formData.append("bookCategory", $categoryId.val());
+    formData.append("bookCategoryNew", $categoryNew.val());
 
     formData.append("bookLanguage", $languageId.val());
     formData.append("bookLanguageNew", $languageNew.val());

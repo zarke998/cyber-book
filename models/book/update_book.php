@@ -27,6 +27,9 @@
 
     $description = $_POST["bookDescription"];
 
+    $categoryNew = $_POST["bookCategoryNew"];
+    $categoryId = $_POST["bookCategory"];
+
     $languageNew = $_POST["bookLanguageNew"];
     $languageId = $_POST["bookLanguage"];
 
@@ -51,6 +54,14 @@
 #endregion
 
 #region variable validation
+    if($categoryNew != ""){
+        $categoryId = add_category($categoryNew);
+
+        if($categoryId == 0){
+            output_json("Internal server error.", 500);
+            exit;
+        }
+    }
 
     if($languageNew != ""){
         $languageId = add_language($languageNew);
@@ -103,7 +114,8 @@
                     language_id = ?, 
                     back_type_id = ?, 
                     author_id = ?, 
-                    publisher_id = ?
+                    publisher_id = ?,
+                    category_id = ?
                 WHERE id=?";
         $stm = $conn->prepare($query);
         $stm->bindParam(1, $title);
@@ -117,7 +129,8 @@
         $stm->bindParam(9, $backTypeId);
         $stm->bindParam(10, $authorId);
         $stm->bindParam(11, $publisherId);
-        $stm->bindParam(12, $id);
+        $stm->bindParam(12, $categoryId);
+        $stm->bindParam(13, $id);
 
         if(!$stm->execute()){
             output_json("Internal server error.", 500);
