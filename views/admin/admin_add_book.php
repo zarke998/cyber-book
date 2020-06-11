@@ -8,7 +8,7 @@
     require_once ROOT."/models/back-type/get_all.php";
 ?>
 
-<div id="admin-add-book-container" class="container">
+<div id="admin-add-book-container" class="container admin-content-container">
     <h2 class="text-center my-4">Add book</h2>
     <form class="mx-auto my-5 w-50" action="#" method="post">
         <div class="form-group row align-items-center">

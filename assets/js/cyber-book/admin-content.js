@@ -6,6 +6,9 @@ $(document).ready(function(){
     //Book update
     $("select[name='bookId']").change(getBook);
     $("#admin-update-book-btn").click(updateBook);
+
+    //Delete book
+    $("#admin-delete-book-btn").click(deleteBook);
 });
 
 function togglePropertyInputType(){
@@ -374,7 +377,43 @@ function updateBook(e){
     });
 
 }
+function deleteBook(e){
+    
+    e.preventDefault();
 
+    var $id = $("select[name='bookId']");
+
+    if($id.val() == 0){
+        alert("Please select a book to delete.");
+        return;
+    }
+
+    var formData = new FormData();
+
+    formData.append("bookId", $id.val());
+
+    formData.append("deleteBookBtn", true);
+
+    $.ajax({
+        url: "models/book/delete_book.php",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(data){
+            alert(data.message);
+            location.reload();
+        },
+        error: function(xhr, errType, errMsg){
+            var data = JSON.parse(xhr.responseText);
+            
+            alert(data.message);
+        }
+    });
+
+
+}
 function countDecimals(number){
     var stringNum = number.toString();
 
