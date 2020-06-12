@@ -12,7 +12,20 @@
     
 
     try{
+        $query_count = executeBooksQuery(true);
 
+        $query_result = executeBooksQuery();
+
+        echo json_encode(["query_count" => $query_count, "query_result" => $query_result]);
+        exit;
+    }
+    catch(Exception $e){
+        output_json_message("Internal server error", 500);
+        exit;
+    }
+
+
+    function executeBooksQuery($get_query_count = false){
         if(!isset($_GET["getBooksByCriteria"])){
             output_json_message("Incomplete input data.", 400);
             exit;
@@ -27,7 +40,7 @@
         $sortCrit = "";
         if(isset($_GET["sortCrit"])){
             foreach($shop_criterias as $crit){
-                if($crit->sort_id == $_GET["sortCrit"])
+                 if($crit->sort_id == $_GET["sortCrit"])
                     $sortCrit = $crit->query;
             }
         }
@@ -36,7 +49,7 @@
         $offset = $_GET["offset"];
 
         $searchQuery = "";
-        if(isset($_GET["search"])){
+        if(isset($_GET["search"]) and $_GET["search"] != ""){
             $searchQuery = "AND INSTR(title,:search) > 0 ";
         }
 
@@ -96,20 +109,30 @@
         }
 
 #endregion
-        $query = "SELECT books.id AS bookId, title, description, publish_date, num_of_pages, critics_rating, price, discount, language_id, back_type_id, author_id, publisher_id, category_id, book_images.href AS cover_url FROM books
+        if($get_query_count){
+            $limitFilter = "";
+            $columnsFilter = "COUNT(*) AS query_count";
+        }
+        else{
+            $limitFilter = "LIMIT :limit OFFSET :offset ";
+            $columnsFilter = "books.id AS bookId, title, description, publish_date, num_of_pages, critics_rating, price, discount, language_id, back_type_id, author_id, publisher_id, category_id, book_images.href AS cover_url ";
+        }
+        $query = "SELECT $columnsFilter FROM books
                     INNER JOIN book_images ON book_images.book_id = books.id
 
                 WHERE book_images.lod_level = ".IMAGE_SIZE_MEDIUM." $searchQuery $authorsFilter $languagesFilter $publishersFilter $backTypesFilter $categoriesFilter
                 $sortCrit
-                LIMIT :limit OFFSET :offset;";
+                $limitFilter";
 
 
-        
+        global $conn;
         $stm = $conn->prepare($query);
         
 #region Bind params
-        $stm->bindParam(":limit", $limit, PDO::PARAM_INT);
-        $stm->bindParam(":offset", $offset, PDO::PARAM_INT);
+        if(!$get_query_count){
+            $stm->bindParam(":limit", $limit, PDO::PARAM_INT);
+            $stm->bindParam(":offset", $offset, PDO::PARAM_INT);
+        }
 
         if($searchQuery != ""){
             $stm->bindParam(":search", $searchQuery);
@@ -159,17 +182,18 @@
                 $stm->bindParam(":backType$i", $backTypes[$i]);
             }
         }
-#endRegion
+#endregion
 
         if(!$stm->execute()){
             output_json_message("Internal server error", 500);
             exit;
         }
 
-        echo json_encode($stm->fetchAll());
-    }
-    catch(Exception $e){
-        output_json_message("Internal server error", 500);
-        exit;
+        if($get_query_count){
+            return $stm->fetch()->query_count;
+        }
+        else{
+            return $stm->fetchAll();
+        }
     }
 ?>

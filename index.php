@@ -30,6 +30,7 @@
         case Pages::Shop :
             $page_src = "views/shop.php";
             $page_title = "Shop";
+            $scripts[] = "/assets/js/cyber-book/shop.js";
             break;
         case Pages::Contact :
             $page_src = "views/contact.php";

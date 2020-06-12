@@ -168,14 +168,17 @@ select{
 }
 #shop-upper-controls{
     padding-bottom: 5px;
-    .pagination{
-        .page-link{
-            &:focus{
-                box-shadow: none;
-            }
+}
+
+.pagination{
+    .page-link{
+        border-radius: 0px !important;
+        &:focus{
+            box-shadow: none;
         }
     }
 }
+
 .shop-filters{
     border-left: 1px solid $shop-filters-border;
     .shop-filter{

@@ -37,19 +37,19 @@
                     <nav aria-label="Pagination">
                         <ul class="pagination">
                             <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
+                                <a class="page-link page-link-arrow" href="#" data-increment="-1" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
                             </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <div class="pagination-pages d-flex">
+                                
+                            </div>
                             <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                                <a class="page-link page-link-arrow" href="#" data-increment="1" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </li>
                         </ul>
                     </nav>
@@ -58,7 +58,7 @@
                 <div class="tab-content" id="nav-tabContent">
                     <!-- card one -->
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        <div class="row">
+                        <div id="shop-container" class="row">
                             <div class="col-lg-3 col-sm-4 col-6">
                                 <div class="single-product mb-60">
                                     <div class="product-img">
@@ -250,19 +250,21 @@
                     <nav aria-label="Pagination">
                         <ul class="pagination">
                             <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
+                                <a class="page-link page-link-arrow" href="#" data-increment="-1" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
                             </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                            <div class="pagination-pages d-flex">
+                                
+                            </div>
+
                             <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                                <a class="page-link page-link-arrow" href="#" data-increment="1" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </li>
                         </ul>
                     </nav>
