@@ -8,6 +8,8 @@
     require_once ROOT."/config/connection.php";
     require_once ROOT."/models/utilities/json_utilities.php";
     
+    require_once ROOT."/models/sort/get_criterias_by_area.php";
+    
 
     try{
 
@@ -18,31 +20,15 @@
 
 
 #region Query Building
+        $sort_area = $_GET["sortArea"];
+
+        $shop_criterias = get_criterias_by_area($sort_area);
+
         $sortCrit = "";
         if(isset($_GET["sortCrit"])){
-            switch($_GET["sortCrit"]){
-                case 1:
-                    $sortCrit = "ORDER BY publish_date DESC ";
-                    break;
-                case 2:
-                    $sortCrit = "ORDER BY publish_date ASC ";
-                    break;
-                case 3:
-                    $sortCrit = "ORDER BY price ASC ";
-                    break;
-                case 4:
-                    $sortCrit = "ORDER BY price DESC ";
-                    break;
-                case 5:
-                    $sortCrit = "ORDER BY critics_rating DESC ";
-                    break;
-                case 6:
-                    $sortCrit = "ORDER BY critics_rating ASC ";
-                    break;
-                default:
-                    $sortCrit = "";
-                    break;
-
+            foreach($shop_criterias as $crit){
+                if($crit->sort_id == $_GET["sortCrit"])
+                    $sortCrit = $crit->query;
             }
         }
         

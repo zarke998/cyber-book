@@ -13,7 +13,8 @@ function loadMostRecentTitles(){
         method: "GET",
         dataType: "json",
         data: {
-            sortCrit: 1,
+            sortCrit: 3,
+            sortArea: "home_most_recent_titles",
             limit: 8,
             offset: 0,
             getBooksByCriteria: true
@@ -110,7 +111,8 @@ function loadBestByCriticsTitles(){
         method: "GET",
         dataType: "json",
         data: {
-            sortCrit: 5,
+            sortCrit: 7,
+            sortArea: "shop_sort",
             limit: 6,
             offset: 0,
             getBooksByCriteria: true

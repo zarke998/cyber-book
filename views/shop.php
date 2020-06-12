@@ -16,7 +16,7 @@
                         <form action="#">
                             <div class="select-itms">
                                 <select name="select" id="select1">
-                                    <option value="">Featured</option>
+                                    <option value=""></option>
                                     <option value="">Featured A</option>
                                     <option value="">Featured B</option>
                                     <option value="">Featured C</option>
