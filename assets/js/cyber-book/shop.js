@@ -16,7 +16,8 @@ var currentPage = 1;
 
 $(document).ready(function(){
     loadBooks(searchFilter, categoryIds, languageIds, authorIds, publisherIds, backTypeIds, sortCriteriaId, shopListLimit, offsetValue);
-    
+
+    $(".shop-filters input[type=checkbox]").change(filterBooks);
 });
 
 function loadBooks(searchFilter, categoryIds, languageIds, authorIds, publisherIds, backTypeIds, sortCriteriaId,  limitValue, offsetValue){
@@ -53,6 +54,7 @@ function loadBooks(searchFilter, categoryIds, languageIds, authorIds, publisherI
         }
     });
 }
+
 function initializePagination(totalBooksFiltered){
     let $container = $(".pagination-pages");
 
@@ -119,6 +121,7 @@ function populateShopList(books){
     }
 }
 
+// Pagination click
 function loadPageIndex(e){
     e.preventDefault();
 
@@ -143,11 +146,58 @@ function loadPageIndex(e){
 
     currentPage = nextPageIndex;
 }
-
 function updatePaginationHighlight(page){
     $(".page-item").removeClass("active");
 
     $(`.page-link:contains(${page})`).parent().addClass("active");
+}
+
+function filterBooks(){
+    let categories = $("input[name='shop-categories[]']:checked").map(function() {
+        return $(this).val();
+    }).get();
+
+    let languages = $("input[name='shop-languages[]']:checked").map(function() {
+        return $(this).val();
+    }).get();
+
+    let authors = $("input[name='shop-authors[]']:checked").map(function() {
+        return $(this).val();
+    }).get();
+
+    let publishers = $("input[name='shop-publishers[]']:checked").map(function() {
+        return $(this).val();
+    }).get();
+
+    let backTypes = $("input[name='shop-back-types[]']:checked").map(function() {
+        return $(this).val();
+    }).get();
+
+    if(categories.length == 0)
+        categories = null;
+
+    if(languages.length == 0)
+        languages = null;
+    
+    if(authors.length == 0)
+        authors = null;
+
+    if(publishers.length == 0)
+        publishers = null;
+
+    if(backTypes.length == 0)
+        backTypes = null;
+
+    offsetValue = 0;
+    currentPage = 1;
+    loadBooks(searchFilter, categories, languages, authors, publishers, backTypes, sortCriteriaId, shopListLimit, offsetValue);
+
+
+    categoryIds = categories;
+    languageIds = languages;
+    authorIds = authors;
+    publisherIds = publishers;
+    backTypeIds = backTypes;
 }
 
 function floatTo2Decimals(real){
