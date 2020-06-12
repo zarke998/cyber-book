@@ -22,8 +22,8 @@
                             <span>Sort by: </span>
                         </div>
                         <form action="#">
-                            <div class="select-itms">
-                                <select name="select" id="select1">
+                            <div class="select-itms ml-2">
+                                <select name="select" id="sort-select">
                                     <?php 
                                         $sort_criterias = get_criterias_by_area("shop_sort");
 

@@ -20,6 +20,7 @@
         exit;
     }
     catch(Exception $e){
+        var_dump($e->getMessage());
         output_json_message("Internal server error", 500);
         exit;
     }

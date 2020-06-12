@@ -18,6 +18,8 @@ $(document).ready(function(){
     loadBooks(searchFilter, categoryIds, languageIds, authorIds, publisherIds, backTypeIds, sortCriteriaId, shopListLimit, offsetValue);
 
     $(".shop-filters input[type=checkbox]").change(filterBooks);
+
+    $("#sort-select").change(sortBooks);
 });
 
 function loadBooks(searchFilter, categoryIds, languageIds, authorIds, publisherIds, backTypeIds, sortCriteriaId,  limitValue, offsetValue){
@@ -198,6 +200,13 @@ function filterBooks(){
     authorIds = authors;
     publisherIds = publishers;
     backTypeIds = backTypes;
+}
+function sortBooks(){
+    sortCriteriaId = $(this).val();
+   
+    currentPage = 1;
+    offsetValue = 0;
+    loadBooks(searchFilter, categoryIds, languageIds, authorIds, publisherIds, backTypeIds, sortCriteriaId, shopListLimit, offsetValue);
 }
 
 function floatTo2Decimals(real){
