@@ -1,6 +1,8 @@
 <?php 
     if(!defined("ROOT"))
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
+
+        require_once ROOT."/models/sort/get_criterias_by_area.php";
 ?>
 
 <div id="shop-main">
@@ -16,10 +18,12 @@
                         <form action="#">
                             <div class="select-itms">
                                 <select name="select" id="select1">
-                                    <option value=""></option>
-                                    <option value="">Featured A</option>
-                                    <option value="">Featured B</option>
-                                    <option value="">Featured C</option>
+                                    <?php 
+                                        $sort_criterias = get_criterias_by_area("shop_sort");
+
+                                        foreach($sort_criterias as $crit) : ?>
+                                            <option value="<?= $crit->sort_id ?>"><?= $crit->sort_name ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                         </form>
