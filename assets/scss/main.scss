@@ -187,6 +187,17 @@ select{
                 }
             }
         }
+
+        input[type=checkbox]{
+            width: 20px;
+            height: 20px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        span{
+            user-select: none;
+        }
     }
 }
 #shop-main{

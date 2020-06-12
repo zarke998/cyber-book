@@ -2,7 +2,13 @@
     if(!defined("ROOT"))
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
-        require_once ROOT."/models/sort/get_criterias_by_area.php";
+    require_once ROOT."/models/sort/get_criterias_by_area.php";
+    
+    require_once ROOT."/models/category/get_all.php";
+    require_once ROOT."/models/language/get_all.php";
+    require_once ROOT."/models/author/get_all.php";
+    require_once ROOT."/models/publisher/get_all.php";
+    require_once ROOT."/models/back-type/get_all.php";
 ?>
 
 <div id="shop-main">
@@ -268,40 +274,71 @@
             <div class="shop-filter d-flex flex-column align-items-end">
                 <h4>Category</h4>
                 <ul>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
+                    <?php 
+                        $categories = get_all_categories();
+                        
+                        foreach($categories as $c) : ?>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" class="shop-category mr-2" name="shop-categories[]" value="<?= $c->id ?>" />
+                                <span><?= $c->name ?></span>
+                            </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <div class="shop-filter d-flex flex-column align-items-end">
-                <h4>Category</h4>
+                <h4>Language</h4>
                 <ul>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
+                    <?php 
+                        $languages = get_all_languages();
+                        
+                        foreach($languages as $l) : ?>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" class="shop-category mr-2" name="shop-languages[]" value="<?= $l->id ?>" />
+                                <span><?= $l->name ?></span>
+                            </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <div class="shop-filter d-flex flex-column align-items-end">
-                <h4>Category</h4>
+                <h4>Author</h4>
                 <ul>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Action</a></li>
+                    <?php 
+                        $authors = get_all_authors();
+                        
+                        foreach($authors as $a) : ?>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" class="shop-category mr-2" name="shop-authors[]" value="<?= $a->id ?>" />
+                                <span><?= $a->name ?></span>
+                            </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <div class="shop-filter d-flex flex-column align-items-end">
+                <h4>Publisher</h4>
+                <ul>
+                    <?php 
+                        $publishers = get_all_publishers();
+                        
+                        foreach($publishers as $p) : ?>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" class="shop-category mr-2" name="shop-publishers[]" value="<?= $p->id ?>" />
+                                <span><?= $p->name ?></span>
+                            </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <div class="shop-filter d-flex flex-column align-items-end">
+                <h4>Back type</h4>
+                <ul>
+                    <?php 
+                        $back_types = get_all_back_types();
+                        
+                        foreach($back_types as $bt) : ?>
+                            <li class="d-flex align-items-center">
+                                <input type="checkbox" class="shop-category mr-2" name="shop-back-types[]" value="<?= $bt->id ?>" />
+                                <span><?= $bt->name ?></span>
+                            </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>
