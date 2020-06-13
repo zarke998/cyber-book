@@ -107,6 +107,7 @@
 
                                         <?php else: ?>
                                             <li class="d-lg-block"> <a href="index.php?page=<?= Pages::Login ?>" class="btn header-btn">Sign in</a></li>
+                                            <li class="d-lg-block"> <a href="index.php?page=<?= Pages::Register ?>" class="btn header-btn">Register</a></li>
 
                                         <?php endif; ?>
                                 </ul>
