@@ -20,7 +20,7 @@ function loadMostRecentTitles(){
             getBooksByCriteria: true
         },
         success: function(data){
-            populateMostRecentTitles(data);
+            populateMostRecentTitles(data.query_result);
         },
         error: function(xhr, errType, errMsg){
             var data = JSON.parse(xhr.responseText);
@@ -118,7 +118,7 @@ function loadBestByCriticsTitles(){
             getBooksByCriteria: true
         },
         success: function(data){
-            populateBestByCriticsTitles(data);
+            populateBestByCriticsTitles(data.query_result);
         },
         error: function(xhr, errType, errMsg){
             var data = JSON.parse(xhr.responseText);
