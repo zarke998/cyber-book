@@ -35,6 +35,7 @@
         case Pages::Contact :
             $page_src = "views/contact.php";
             $page_title = "Contact";
+            $scripts[] = "/assets/js/cyber-book/contact.js";
             break;
         case Pages::About :
             $page_src = "views/about.php";
