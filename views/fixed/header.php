@@ -94,7 +94,8 @@
                             </div> 
                             <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
                                 <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
-                                        <div class="shopping-card">
+                                        <div id="shopping-cart" class="shopping-card">
+                                            <span>0</span>
                                             <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
                                         </div>
                                     </li>

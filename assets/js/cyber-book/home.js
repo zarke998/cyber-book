@@ -1,9 +1,13 @@
 $(document).ready(function(){
+    $("a[href='#']").click(function(e) { e.preventDefault(); });
+
     loadMostRecentTitles();
 
     $("#newsletterBtn").click(registerSubscriber);
 
     loadBestByCriticsTitles();
+
+    updateCartIndicator();
 });
 
 //Most recent titles
@@ -21,6 +25,7 @@ function loadMostRecentTitles(){
         },
         success: function(data){
             populateMostRecentTitles(data.query_result);
+            $(".product-img i").click(addBookToCart);
         },
         error: function(xhr, errType, errMsg){
             var data = JSON.parse(xhr.responseText);
@@ -39,10 +44,11 @@ function populateMostRecentTitles(books){
         <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="single-product mb-60">
                 <div class="product-img">
-                    <img src="${b.cover_url}" alt="Book cover">
+                    <a href="#"><img src="${b.cover_url}" alt="Book cover"></a>
+                    <i class="fas fa-plus-circle" data-id="${b.bookId}"></i>
                 </div>
                 <div class="product-caption">
-                    <h4><a href="#" data-id="${b.bookId}">${b.title}</a></h4>
+                    <h4><span>${b.title}</span></h4>
                     <div class="price">
                         <ul>
                             ${getBookPricesTags(b)}
@@ -136,13 +142,45 @@ function populateBestByCriticsTitles(books){
         content+= `
         <div class="col-lg-2 col-sm-4 col-6 px-4 px-lg-2 mb-4 best-by-critics-item text-center">
             <img src="${b.cover_url}" alt="">
-            <a href="#" data-id=${b.bookId}>${b.title}</a>
+            <span>${b.title}</span>
         </div>`;
     });
 
     $container.html(content);
 }
 
+// Cart
+function addBookToCart(){
+    let id = $(this).data("id");
+
+    if(!localStorage){
+        alert("Your browser doesnt't support local storage. Cannot add product to cart.");
+        return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    if(!cart){
+        cart = [];
+    }
+
+    cart.push(id);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    cartCount = cart.length;
+    alert("Book added to cart.");
+
+    updateCartIndicator();
+}
+
+function updateCartIndicator(){
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    if(!cart){
+        cart = [];
+    }
+
+    $("#shopping-cart span").text(cart.length);
+}
 
 function floatTo2Decimals(real){
     return Math.trunc(real*100)/100;
