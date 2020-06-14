@@ -524,6 +524,12 @@ a {
 
 /* #endregion */
 /* #region MEDIA QUERIES */
+@media only screen and (max-width: 1200px) {
+  #author-word-btn {
+    width: 90% !important;
+  }
+}
+
 @media only screen and (max-width: 640px) {
   .cart-nav {
     display: block !important;
@@ -571,6 +577,12 @@ a {
 @media only screen and (max-width: 420px) {
   .single-product-wrapper {
     padding: 0px 50px !important;
+  }
+  #about-main {
+    padding: 0px 5px !important;
+  }
+  #author-word-btn {
+    width: 100% !important;
   }
 }
 
