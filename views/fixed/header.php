@@ -96,7 +96,7 @@
                                 <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
                                         <div id="shopping-cart" class="shopping-card">
                                             <span>0</span>
-                                            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                                            <a href="index.php?page=<?=Pages::Cart?>"><i class="fas fa-shopping-cart"></i></a>
                                         </div>
                                     </li>
                                     <?php

@@ -77,6 +77,11 @@
             $page_title = "Admin";
             $scripts[] = "/assets/js/cyber-book/admin-content.js";
             break;
+        case Pages::Cart :
+            $page_src = "views/cart.php";
+            $page_title = "Cart";
+            $scripts[] = "/assets/js/cyber-book/cart.js";
+            break;
         default : // 404
             $page_src = "views/error_page.php";
             $page_title = "Error";

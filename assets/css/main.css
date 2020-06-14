@@ -422,6 +422,21 @@ a {
 }
 
 /* #endregion */
+/* #region CART */
+#cart-main-intro {
+  background-image: url("/assets/images/book-ultrawide-7.jpg");
+  background-position-y: 40%;
+}
+
+.cart-item p, .cart-item h5 {
+  font-size: 1.1em !important;
+}
+
+#cart-subtotal h5 {
+  font-size: 1.1rem !important;
+}
+
+/* #endregion */
 /* #region ERROR PAGE */
 #error-main-intro {
   background-image: url("/assets/images/book-ultrawide-6.jpg");

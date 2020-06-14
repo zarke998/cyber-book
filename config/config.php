@@ -19,7 +19,7 @@
     define("MAIL_USERNAME", env("MAIL_USERNAME"));
     define("MAIL_PASSWORD", env("MAIL_PASSWORD"));
 
-    define("TOTAL_PAGES_NUMBER", 10);
+    define("TOTAL_PAGES_NUMBER", 11);
 
     function env($key){
         $keyValuePairs = file(ENV_FILE);

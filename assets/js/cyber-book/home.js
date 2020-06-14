@@ -7,7 +7,6 @@ $(document).ready(function(){
 
     loadBestByCriticsTitles();
 
-    updateCartIndicator();
 });
 
 //Most recent titles
@@ -158,10 +157,9 @@ function addBookToCart(){
         return;
     }
 
-    let cart = JSON.parse(localStorage.getItem("cart"));
-    if(!cart){
-        cart = [];
-    }
+    let cart = [];
+    if(localStorage.getItem("cart") != null)
+        cart = JSON.parse(localStorage.getItem("cart"));
 
     cart.push(id);
 
@@ -173,14 +171,7 @@ function addBookToCart(){
     updateCartIndicator();
 }
 
-function updateCartIndicator(){
-    let cart = JSON.parse(localStorage.getItem("cart"));
-    if(!cart){
-        cart = [];
-    }
 
-    $("#shopping-cart span").text(cart.length);
-}
 
 function floatTo2Decimals(real){
     return Math.trunc(real*100)/100;

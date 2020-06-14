@@ -10,6 +10,7 @@
         const Admin_Add_Book = 7;
         const Admin_Update_Book = 8;
         const Admin_Delete_Book = 9;
+        const Cart = 10;
     }
 
     function get_page_name($id){
@@ -24,6 +25,7 @@
             case 7: return "Admin Add Book"; break;
             case 8: return "Admin Update Book"; break;
             case 9: return "Admin Delete Book"; break;
+            case 10: return "Cart"; break;
             default: return null; break;
         }
     }

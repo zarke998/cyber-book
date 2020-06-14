@@ -14,7 +14,12 @@
         echo json_encode(["message" => "Book id not set."]);
         exit;
     }
+
     $id = $_GET["id"];
+    
+    $lod_level = IMAGE_SIZE_MEDIUM;
+    if(isset($_GET["lod_level"]))
+        $lod_level = $_GET["lod_level"];
 
     try{
         $query = "SELECT books.id AS bookId, title, description, publish_date, num_of_pages, critics_rating, price, discount, language_id, back_type_id, author_id, publisher_id, category_id, book_images.href AS cover_url FROM books
@@ -23,9 +28,10 @@
                 -- INNER JOIN publishers ON books.publisher_id = publisher.id
                 -- INNER JOIN languages ON books.language_id = languages.id
                 -- INNER JOIN back_types ON books.back_type_id = back_types.id
-                WHERE books.id=? AND book_images.lod_level = ".IMAGE_SIZE_MEDIUM;
+                WHERE books.id=? AND book_images.lod_level = ?";
         $stm = $conn->prepare($query);
         $stm->bindParam(1, $id);
+        $stm->bindParam(2, $lod_level);
         
         if(!$stm->execute()){
             output_json_message("Internal server error", 500);
