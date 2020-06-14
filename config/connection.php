@@ -22,7 +22,7 @@
 
     function logConnection(){
 
-        if(strpos($_SERVER["PHP_SELF"],"index.php") === false) return;
+        if(strpos($_SERVER["REQUEST_URI"],"index.php") === false) return;
 
         $date = date('Y-m-d H:i:s');
         $page_id = 0;

@@ -4,6 +4,7 @@
 
     require_once ROOT."/config/config.php";
     require_once ROOT."/models/pages.php";
+    require_once ROOT."/models/log/log.php";
 
     function get_page_access_percentages(){
         $log = file(LOG_FILE);
@@ -17,6 +18,7 @@
         foreach($log as $line){
             $splitted_line = explode("\t", trim($line));
             $page_name = str_replace("_"," ", $splitted_line[1]);
+            
 
             $pages_access_count[$page_name]++;
         }
