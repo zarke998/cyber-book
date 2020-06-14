@@ -3,6 +3,9 @@
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/models/pages.php";
+    require_once ROOT."/models/log/get_page_access_percentages.php";
+    require_once ROOT."/models/log/get_page_access_last_24h.php";
+    require_once ROOT."/models/log/get_log_all.php";
 ?>
 
 <div id="admin-container" class="container">
@@ -18,32 +21,34 @@
         <div id="admin-pages-percent">
             <h3>Pages access - percentage</h3>
             <ul class="row my-4">
-                <li class="col-3">Home - 55%</li>
-                <li class="col-3">Home - 55%</li>
-                <li class="col-3">Home - 55%</li>
-                <li class="col-3">Home - 55%</li>
-                <li class="col-3">Home - 55%</li>
-                <li class="col-3">Home - 55%</li>
-                <li class="col-3">Home - 55%</li>
+                <?php 
+                    $page_percentages = get_page_access_percentages();
+                    foreach($page_percentages as $key => $value): ?>
+                        <li class="col-3"><?=$key?> - <?=$value?>%</li>        
+                <?php endforeach;?>
             </ul>
         </div>
         <div id="admin-pages-last-24">
             <h3>Last 24hr page access</h3>
             <ul class="row my-4">
-                <li class="col-3">Home - 2123</li>
-                <li class="col-3">Home - 2123</li>
-                <li class="col-3">Home - 2123</li>
-                <li class="col-3">Home - 2123</li>
-                <li class="col-3">Home - 2123</li>
-                <li class="col-3">Home - 2123</li>
-                <li class="col-3">Home - 2123</li>
+                <?php 
+                    $page_access_last_24h = get_page_access_last_24h();
+                    foreach($page_access_last_24h as $key => $value): ?>
+                        <li class="col-3"><?=$key?> - <?=$value?></li>        
+                <?php endforeach;?>
             </ul>
         </div>
     </div>
     <div id="admin-page-access-log">
         <h3>Access log</h3>
         <div id="admin-log-window">
-            
+            <p>
+                <?php 
+                    $log = get_log_all();
+                    foreach($log as $line) : ?>
+                        <?=$line?><br>
+                <?php endforeach;?>
+            </p>
         </div>
     </div>
 

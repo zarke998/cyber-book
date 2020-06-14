@@ -5,6 +5,7 @@
     define("BASE_URL", "localhost");
 
     define("ENV_FILE", ROOT."/config/.env");
+    define("LOG_FILE", ROOT."/data/log.txt");
     define("SEPARATOR", "&");
 
     //DB Credentials
@@ -16,6 +17,8 @@
     //Mail credentials
     define("MAIL_USERNAME", env("MAIL_USERNAME"));
     define("MAIL_PASSWORD", env("MAIL_PASSWORD"));
+
+    define("TOTAL_PAGES_NUMBER", 10);
 
     function env($key){
         $keyValuePairs = file(ENV_FILE);
