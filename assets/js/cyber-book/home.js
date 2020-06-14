@@ -40,7 +40,7 @@ function populateMostRecentTitles(books){
 
     books.forEach(b => {
         content += `
-        <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="col-xl-3 col-lg-4 col-md-6 most-recent-titles-item">
             <div class="single-product mb-60">
                 <div class="product-img">
                     <a href="#"><img src="${b.cover_url}" alt="Book cover"></a>
@@ -124,6 +124,7 @@ function loadBestByCriticsTitles(){
         },
         success: function(data){
             populateBestByCriticsTitles(data.query_result);
+            $(".best-by-critics-image i").click(addBookToCart);
         },
         error: function(xhr, errType, errMsg){
             var data = JSON.parse(xhr.responseText);
@@ -139,9 +140,19 @@ function populateBestByCriticsTitles(books){
 
     books.forEach(b => {
         content+= `
-        <div class="col-lg-2 col-sm-4 col-6 px-4 px-lg-2 mb-4 best-by-critics-item text-center">
-            <img src="${b.cover_url}" alt="">
-            <span>${b.title}</span>
+        <div class="col-lg-2 col-md-4 col-sm-6 px-sm-5 px-lg-3 px-xl-4 px-5 mb-4 best-by-critics-item single-product text-center">
+            <div class="best-by-critics-image">
+                <a href="#"><img src="${b.cover_url}" alt="Book cover"></a>
+                <i class="fas fa-plus-circle" data-id="${b.bookId}"></i>
+            </div>
+            <div class="product-caption">
+                <h4><span>${b.title}</span></h4>
+                <div class="price">
+                    <ul class="d-flex justify-content-center">
+                        ${getBookPricesTags(b)}
+                    </ul>
+                </div>
+            </div>
         </div>`;
     });
 

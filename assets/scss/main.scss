@@ -81,6 +81,11 @@ a{
         display: none;
     }
 }
+#cart-account-btns{
+    position: relative;
+    top: 0px;
+    right: 0px;
+}
 /* #endregion */
 /* #region HOME */
 #main-intro-slider{
@@ -218,6 +223,31 @@ a{
 
             color: $default-text-color-dark;            
         }
+    }
+}
+.best-by-critics-image{
+    position: relative;
+    i{
+        display: none;
+
+        top: 44%;
+        left: 44%;
+        position: absolute;
+
+        font-size: 2.5rem;
+
+        color: darken($default-text-color,10%);
+        
+        cursor: pointer;
+
+        &:hover{
+            color: $color-primary-light;
+            text-shadow: 1px 1px 2px black;
+        }
+
+    }
+    &:hover i{
+        display: block;
     }
 }
 
@@ -478,6 +508,7 @@ a{
     display: none;
 }
 /* #endregion */
+
 /* #region SPACING CLASSES */
 .pt-8{
     padding-top: 100px;
@@ -511,3 +542,60 @@ a{
     user-select: none;
 }
 /* #endregion */
+
+/* #region MEDIA QUERIES */
+@media only screen and (max-width: 640px){
+
+    .cart-nav{
+        display: block !important;
+    }
+    #shopping-cart{
+        display: none;
+    }
+
+    //Authenticated users
+    .logout-nav{
+        display: block !important;
+    }
+    #logout-btn{
+        display: none;
+    }
+
+    //Unauthenticated users
+    .login-nav{
+        display: block !important;
+    }
+    .register-nav{
+        display: block !important;
+    }
+
+    #login-btn{
+        display: none !important;
+    }
+    #register-btn{
+        display: none !important;
+    }
+    
+}
+@media only screen and (max-width: 575px){
+    .best-by-critics-item{
+        img{
+            width: 75%;
+        }
+    }
+    
+}
+@media only screen and (max-width: 360px){
+    .best-by-critics-item{
+        img{
+            width: 100%;
+        }
+    }
+    .most-recent-titles-item{
+        img{
+            width: 75% !important;
+            height: auto !important;
+        }
+    }
+}
+/*#endregion*/

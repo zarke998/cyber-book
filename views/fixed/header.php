@@ -17,9 +17,9 @@
             <div class="main-header ">
                     <?php 
                         if(!isset($_SESSION["user"])) : ?>
-                            <div class="header-top top-bg d-none d-lg-block hide-header-top">
+                            <div class="header-top top-bg hide-header-top">
                     <?php else: ?>
-                        <div class="header-top top-bg d-none d-lg-block">
+                        <div class="header-top top-bg">
                     <?php endif; ?>
                             <div class="container-fluid">
                                 <div class="col-xl-12">
@@ -73,7 +73,7 @@
                             </div>
                             <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
                                 <!-- Main-menu -->
-                                <div class="main-menu f-right d-none d-lg-block">
+                                <div class="main-menu f-left ml-5 d-none d-lg-block">
                                     <nav>                                                
                                         <ul id="navigation">                                                                                                                                    
                                             <?php 
@@ -88,11 +88,21 @@
                                                         <li><a href="<?= $menu_item->href ?>"><?= $menu_item->item_name ?></a></li>
                                                     <?php endforeach; 
                                             ?>
+                                            <?php 
+                                                if(isset($_SESSION["user"])) : ?>
+                                                    <li class="d-none cart-nav"><a href="index.php?page=<?=Pages::Cart?>">Cart</a></li>
+                                                    <li class="d-none logout-nav"><a href="models/account/logout.php">Logout</a></li>
+                                            <?php else: ?>
+
+                                                    <li class="d-none cart-nav"><a href="index.php?page=<?=Pages::Cart?>">Cart</a></li>
+                                                    <li class="d-none login-nav"><a href="index.php?page=<?=Pages::Login?>">Sign in</a></li>
+                                                    <li class="d-none register-nav"><a href="index.php?page=<?=Pages::Register?>">Register</a></li>
+                                            <?php endif; ?>
                                         </ul>
                                     </nav>
                                 </div>
                             </div> 
-                            <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
+                            <div id="cart-account-btns" class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card ">
                                 <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
                                         <div id="shopping-cart" class="shopping-card">
                                             <span>0</span>
@@ -101,12 +111,10 @@
                                     </li>
                                     <?php
                                         if(isset($_SESSION["user"])) : ?>
-                                            <li class="d-lg-block"> <a href="models/account/logout.php" class="btn header-btn">Logout</a></li>
-
+                                            <li id="logout-btn" class="d-lg-block"> <a href="models/account/logout.php" class="btn header-btn">Logout</a></li>
                                         <?php else: ?>
-                                            <li class="d-lg-block"> <a href="index.php?page=<?= Pages::Login ?>" class="btn header-btn">Sign in</a></li>
-                                            <li class="d-lg-block"> <a href="index.php?page=<?= Pages::Register ?>" class="btn header-btn">Register</a></li>
-
+                                            <li id="login-btn" class="d-lg-block"> <a href="index.php?page=<?= Pages::Login ?>" class="btn header-btn">Sign in</a></li>
+                                            <li id="register-btn" class="d-lg-block"> <a href="index.php?page=<?= Pages::Register ?>" class="btn header-btn">Register</a></li>
                                         <?php endif; ?>
                                 </ul>
                             </div>
