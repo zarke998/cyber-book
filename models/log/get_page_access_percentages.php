@@ -19,7 +19,7 @@
             $splitted_line = explode("\t", trim($line));
             $page_name = str_replace("_"," ", $splitted_line[1]);
             
-
+            if($page_name == "") continue;
             $pages_access_count[$page_name]++;
         }
 

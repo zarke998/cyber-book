@@ -17,6 +17,8 @@
             $splitted_line = explode("\t", trim($line));
             $page_name = str_replace("_"," ", $splitted_line[1]);
 
+            if($page_name == "") continue;
+
             $date_accessed = strtotime($splitted_line[3]);
             if($current_time - $date_accessed < 86400) // sekundi u danu
                 $pages_access_count[$page_name]++;
