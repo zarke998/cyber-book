@@ -17,6 +17,8 @@
     require_once ROOT."/models/image/move_to_books_tmp.php";
     require_once ROOT."/models/image/add_image.php";
     require_once ROOT."/models/image/functions.php";
+
+    include_once ROOT."/models/log/log.php"; 
     
     header("Content-Type: application/json");
 
@@ -187,6 +189,8 @@
     }
     catch(Exception $e){
         output_json("Internal server error.", 500);
+        
+        log_error("Error adding book. Exception {$e->getMessage()}");
         exit;
     }
 

@@ -3,6 +3,7 @@
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/config/connection.php";
+    include_once ROOT."/models/log/log.php"; 
 
     function add_author($name){
         global $conn;
@@ -22,6 +23,8 @@
 
         }
         catch(Exception $e){
+
+            log_error("Error adding author. Exception {$e->getMessage()}");
             return 0;
         }
         

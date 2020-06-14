@@ -3,6 +3,7 @@
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/config/connection.php";
+    include_once ROOT."/models/log/log.php";
 
     function get_criterias_by_area($area_name){
         global $conn;
@@ -22,6 +23,7 @@
             return $stm->fetchAll();
         }
         catch(Exception $e){
+            log_error("Error fetching criterias by area. Exception: {$e->getMessage()}");
             return null;
         }
         

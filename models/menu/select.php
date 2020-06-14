@@ -3,6 +3,7 @@
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/config/connection.php";
+    include_once ROOT."/models/log/log.php";
 
     function get_menu_by_name($name){
         global $conn;
@@ -19,6 +20,7 @@
             return $stm->fetchAll();
         }
         catch(Exception $e){
+            log_error("Error fetching menu. Exception: {$e->getMessage()}");
             return null;
         }
     }

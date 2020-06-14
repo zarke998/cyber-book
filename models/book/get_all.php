@@ -4,6 +4,8 @@
 
     require_once ROOT."/config/connection.php";
 
+    include_once ROOT."/models/log/log.php";
+
     define("BOOK_FULL_INFO", 0);
     define("BOOK_TITLE_ONLY", 1);
 
@@ -30,6 +32,8 @@
             return $stm->fetchAll();
         }
         catch(Exception $e){
+
+            log_error("Error fetching all books. Exception {$e->getMessage()}");
             return null;
         }
         

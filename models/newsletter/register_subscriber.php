@@ -8,6 +8,8 @@
     require_once ROOT."/models/mailer/send_mail.php";
     require_once ROOT."/models/utilities/json_utilities.php";
 
+    include_once ROOT."/models/log/log.php";
+
     if(!isset($_POST["registerSubscriberBtn"])){
         output_json_message("Access forbidden.", 403);
         exit;
@@ -44,6 +46,8 @@
     }
     catch(Exception $e){
         output_json_message("Internal server error", 500);
+
+        log_error("Error registering subscriber. Exception: {$e->getMessage()}");
         exit;
     }
 

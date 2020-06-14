@@ -6,6 +6,7 @@
 
     define("ENV_FILE", ROOT."/config/.env");
     define("LOG_FILE", ROOT."/data/log.txt");
+    define("LOG_FILE_ERROR", ROOT."/data/log_error.txt");
     define("SEPARATOR", "&");
 
     //DB Credentials

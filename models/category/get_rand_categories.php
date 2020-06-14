@@ -4,6 +4,7 @@
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/config/connection.php";
+    include_once ROOT."/models/log/log.php";
 
     function get_rand_categories($limit){
         try{
@@ -21,6 +22,8 @@
         }
         catch(Exception $e){
             echo $e->getMessage();
+
+            log_error("Error getting random categories. Exception: {$e->getMessage()}");
             return null;
         }
     }

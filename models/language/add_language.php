@@ -4,6 +4,8 @@
 
     require_once ROOT."/config/connection.php";
 
+    include_once ROOT."/models/log/log.php";
+
     function add_language($name){
         global $conn;
 
@@ -21,6 +23,7 @@
             return $id;
         }
         catch(Exception $e){
+            log_error("Error adding language. Exception: {$e->getMessage()}");
             return 0;
         }
         

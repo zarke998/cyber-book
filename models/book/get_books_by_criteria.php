@@ -9,6 +9,8 @@
     require_once ROOT."/models/utilities/json_utilities.php";
     
     require_once ROOT."/models/sort/get_criterias_by_area.php";
+
+    include_once ROOT."/models/log/log.php";
     
 
     try{
@@ -22,6 +24,8 @@
     catch(Exception $e){
         var_dump($e->getMessage());
         output_json_message("Internal server error", 500);
+
+        log_error("Error getting books by criteria. Exception {$e->getMessage()}");
         exit;
     }
 

@@ -6,6 +6,8 @@
     require_once ROOT."/models/image/resize_image.php";
     require_once ROOT."/config/connection.php";
 
+    include_once ROOT."/models/log/log.php";
+
     function get_book_rand_discount(){
         try{
             global $conn;
@@ -29,6 +31,8 @@
             return $stm->fetch();
         }
         catch(Exception $e){
+
+            log_error("Error updating book. Exception {$e->getMessage()}");
             return null;
             exit;
         }

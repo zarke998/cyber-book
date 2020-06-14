@@ -3,6 +3,7 @@
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/config/connection.php";
+    include_once ROOT."/models/log/log.php";
 
     function add_image($book_id, $href, $lod_level){
         global $conn;
@@ -24,6 +25,7 @@
 
         }
         catch(Exception $e){
+            log_error("Error adding image. Exception {$e->getMessage()}");
             return 0;
         }
     }

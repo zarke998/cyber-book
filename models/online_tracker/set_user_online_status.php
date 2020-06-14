@@ -4,6 +4,7 @@
         define("ROOT",$_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/config/connection.php";
+    include_once ROOT."/models/log/log.php";
 
     function set_user_online_status($id, $is_online){
         global $conn;
@@ -23,6 +24,7 @@
             return true;
         }
         catch(Exception $e){
+            log_error("Error updating user online status. Exception: {$e->getMessage()}");
             return false;
         }
     }

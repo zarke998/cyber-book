@@ -3,6 +3,7 @@
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/config/connection.php";
+    include_once ROOT."/models/log/log.php";
 
     function add_category($name){
         global $conn;
@@ -21,6 +22,7 @@
             return $id;
         }
         catch(Exception $e){
+            log_error("Error adding category. Exception {$e->getMessage()}");
             return 0;
         }
         

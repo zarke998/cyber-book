@@ -5,6 +5,9 @@
     require_once ROOT."/config/config.php";
     
     require_once ROOT."/dependencies/composer/vendor/autoload.php";
+
+    include_once ROOT."/models/log/log.php";
+
     use PHPMailer\PHPMailer\PHPMailer;
 
     function send_mail($to, $subject, $body, &$send_error = ""){
@@ -37,6 +40,9 @@
         }
         catch(Exception $e){
             $send_error = $e->getMessage();
+
+            log_error("Error sending mail. Exception: {$e->getMessage()}");
+
             return false;
         }
     }

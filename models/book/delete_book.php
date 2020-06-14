@@ -7,6 +7,8 @@
 
     require_once ROOT."/config/connection.php";
     require_once ROOT."/models/image/get_images_by_book.php";
+
+    include_once ROOT."/models/log/log.php"; 
     
     header("Content-Type: application/json");
 
@@ -43,6 +45,8 @@
     }
     catch(Exception $e){
         output_json("Internal server error.", 500);
+
+        log_error("Error deleting book. Exception {$e->getMessage()}");
         exit;
     }
 

@@ -9,6 +9,8 @@
     require_once ROOT."/config/connection.php";
     require_once ROOT."/models/mailer/send_mail.php";
     require_once ROOT."/models/user/select.php";
+
+    include_once ROOT."/models/log/log.php";
     
 
     if(!isset($_POST["email"])){
@@ -70,6 +72,8 @@
     catch(Exception $e){
         http_response_code(500);
         echo json_encode(["message" => "Internal server error."]);
+
+        log_error("Error resending activation link. Exception: {$e->getMessage()}");
         exit;
     }
     

@@ -3,6 +3,7 @@
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/config/connection.php";
+    include_once ROOT."/models/log/log.php"; 
 
     function get_all_back_types(){
         global $conn;
@@ -18,6 +19,8 @@
             return $stm->fetchAll();
         }
         catch(Exception $e){
+            log_error("Error fetching back types. Exception {$e->getMessage()}");
+
             return null;
         }
         

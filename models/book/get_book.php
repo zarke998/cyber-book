@@ -8,6 +8,8 @@
     require_once ROOT."/config/connection.php";
     require_once ROOT."/models/utilities/json_utilities.php";
 
+    include_once ROOT."/models/log/log.php";
+
     if(!isset($_GET["id"])){
         echo json_encode(["message" => "Book id not set."]);
         exit;
@@ -34,6 +36,8 @@
     }
     catch(Exception $e){
         output_json_message("Internal server error", 500);
+        
+        log_error("Error getting book by id. Exception {$e->getMessage()}");
         exit;
     }
 ?>

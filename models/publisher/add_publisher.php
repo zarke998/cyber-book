@@ -3,6 +3,7 @@
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/config/connection.php";
+    include_once ROOT."/models/log/log.php";
 
     function add_publisher($name){
         global $conn;
@@ -22,6 +23,7 @@
 
         }
         catch(Exception $e){
+            log_error("Error adding publisher. Exception {$e->getMessage()}");
             return 0;
         }
         

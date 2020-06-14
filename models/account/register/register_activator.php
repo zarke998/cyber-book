@@ -3,6 +3,7 @@
         define("ROOT",$_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/config/connection.php";
+    include_once ROOT."/models/log/log.php";
 
     function activate_account($uid, $activation_key){
         global $conn;
@@ -25,6 +26,7 @@
             }
         }
         catch(Exception $e){
+            log_error("Error activating account. Exception: {$e->getMessage()}");
             return false;
         }
     }

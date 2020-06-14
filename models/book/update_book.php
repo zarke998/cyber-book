@@ -11,6 +11,8 @@
     require_once ROOT."/models/author/add_author.php";
     require_once ROOT."/models/publisher/add_publisher.php";
     require_once ROOT."/models/back-type/add_back_type.php";
+
+    include_once ROOT."/models/log/log.php";
     
     header("Content-Type: application/json");
 
@@ -143,6 +145,8 @@
     }
     catch(Exception $e){
         output_json("Internal server error.", 500);
+
+        log_error("Error updating book. Exception {$e->getMessage()}");
         exit;
     }
 

@@ -6,6 +6,8 @@
     require_once ROOT."/models/pages.php";
     require_once ROOT."/models/mailer/send_mail.php";
 
+    include_once ROOT."/models/log/log.php"; 
+
     function register($email, $password, &$err_json = null){
         global $conn;
 
@@ -69,6 +71,8 @@
         catch(Exception $e){
             http_response_code(500);
             $err_json = json_encode(["message" => "SERVER ERROR: Error registering user."]);
+
+            log_error("Error registering user. Exception {$e->getMessage()}");
             return false;
         }
     }

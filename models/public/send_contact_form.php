@@ -6,6 +6,7 @@
 
     require_once ROOT."/models/mailer/send_mail.php";
     require_once ROOT."/models/utilities/json_utilities.php";
+    include_once ROOT."/models/log/log.php";
     
 
     if(!isset($_POST["contactBtn"])){
@@ -51,6 +52,8 @@
     }
     catch(Exception $e){
         output_json_message("Internal server error.", 500);
+
+        log_error("Error sending contact form data. Exception: {$e->getMessage()}");
         exit;
     }
     
