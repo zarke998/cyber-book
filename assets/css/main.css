@@ -18,6 +18,17 @@ a {
   color: black;
 }
 
+/* #region HEADER */
+#online-users-status {
+  color: white;
+  font-size: 0.8rem;
+}
+
+#online-users-status i {
+  color: #00e400;
+}
+
+/* #endregion */
 /* #region HOME */
 #main-intro-slider {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("/assets/images/book-wallpaper.jpg") !important;

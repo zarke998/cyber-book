@@ -1,9 +1,16 @@
 <?php
     if(session_status() == PHP_SESSION_NONE)
-        session_start();    
+        session_start();
 
     ob_start();
     include "models/pages.php";
+    require_once "models/online_tracker/udpate_user_activity.php";
+
+    
+    
+    if(isset($_SESSION["user"])){
+        update_user_activity($_SESSION["user"]->id);
+    }
 
     $website_name = "CyberBook";
 

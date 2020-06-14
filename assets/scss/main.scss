@@ -23,6 +23,8 @@ $about-social-icons-horiz-margins: 5px;
 $twitter-color: #00acee;
 $instagram-color: #eb1dbe;
 $youtube-color: #e01e18;
+
+$online-users-indicator-color: rgb(0, 228, 0);
 html{
     overflow-x: hidden;
     font-size: 20px;
@@ -41,7 +43,15 @@ select{
 a{
     color: black;
 }
-
+/* #region HEADER */
+#online-users-status{
+    color: $default-text-color;
+    font-size: 0.8rem;
+    i{
+        color: $online-users-indicator-color;
+    }
+}
+/* #endregion */
 /* #region HOME */
 #main-intro-slider{
     background: linear-gradient(rgba(0,0,0,$main-slider-bg-darkness), rgba(0,0,0,$main-slider-bg-darkness)), url("/assets/images/book-wallpaper.jpg") !important;

@@ -7,6 +7,7 @@
 
     require_once ROOT."/config/connection.php";
     require_once ROOT."/models/mailer/send_mail.php";
+    require_once ROOT."/models/online_tracker/set_user_online_status.php";
 
     function login($email, $password, &$err_json){
         global $conn;
@@ -39,6 +40,8 @@
             }
 
             $_SESSION["user"] = $user;
+            set_user_online_status($user->id, true);
+
             return true;
         }
         catch(Exception $e){

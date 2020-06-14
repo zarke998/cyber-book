@@ -6,6 +6,7 @@
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
     include_once ROOT."/models/pages.php";
+    require_once ROOT."/models/online_tracker/get_online_users.php";
 ?>
 
 <body>
@@ -14,43 +15,46 @@
         <!-- Header Start -->
        <div class="header-area">
             <div class="main-header ">
-                <div class="header-top top-bg d-none d-lg-block">
-                   <div class="container-fluid">
-                       <div class="col-xl-12">
-                            <div class="row d-flex justify-content-between align-items-center">
-                                <div class="header-info-left d-flex">
-                                    <div class="flag">
-                                        <img src="assets/img/icon/header_icon.png" alt="">
-                                    </div>
-                                    <div class="select-this">
-                                        <form action="#">
-                                            <div class="select-itms">
-                                                <select name="select" id="select1">
-                                                    <option value="">USA</option>
-                                                    <option value="">SPN</option>
-                                                    <option value="">CDA</option>
-                                                    <option value="">USD</option>
-                                                </select>
+            
+                        <div class="header-top top-bg d-none d-lg-block">
+                            <div class="container-fluid">
+                                <div class="col-xl-12">
+                                        <div class="row d-flex justify-content-end align-items-center">
+                                            <div class="header-info-left d-flex d-none">
+                                                <div class="flag d-none">
+                                                    <img src="assets/img/icon/header_icon.png" alt="">
+                                                </div>
+                                                <div class="select-this d-none">
+                                                    <form action="#">
+                                                        <div class="select-itms">
+                                                            <select name="select" id="select1">
+                                                                <option value="">USA</option>
+                                                                <option value="">SPN</option>
+                                                                <option value="">CDA</option>
+                                                                <option value="">USD</option>
+                                                            </select>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <ul class="contact-now d-none">     
+                                                    <li>+777 2345 7886</li>
+                                                </ul>
                                             </div>
-                                        </form>
-                                    </div>
-                                    <ul class="contact-now">     
-                                        <li>+777 2345 7886</li>
-                                    </ul>
-                                </div>
-                                <div class="header-info-right">
-                                   <ul>                                          
-                                       <li><a href="login.html">My Account </a></li>
-                                       <li><a href="product_list.html">Wish List  </a></li>
-                                       <li><a href="cart.html">Shopping</a></li>
-                                       <li><a href="cart.html">Cart</a></li>
-                                       <li><a href="checkout.html">Checkout</a></li>
-                                   </ul>
+                                            <div class="header-info-right d-none">
+                                                <ul>                                          
+                                                    <li><a href="login.html">My Account </a></li>
+                                                    <li><a href="product_list.html">Wish List  </a></li>
+                                                    <li><a href="cart.html">Shopping</a></li>
+                                                    <li><a href="cart.html">Cart</a></li>
+                                                    <li><a href="checkout.html">Checkout</a></li>
+                                                </ul>
+                                            </div>
+                                            <span id="online-users-status"><i class="fas fa-circle mr-1"></i>Online users: <?=get_online_users()?></span>
+                                        </div>
                                 </div>
                             </div>
-                       </div>
-                   </div>
-                </div>
+                        </div>
+
                <div class="header-bottom  header-sticky">
                     <div class="container-fluid">
                         <div class="row align-items-center">
