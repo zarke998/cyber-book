@@ -443,3 +443,6 @@
 /index.php?page=6	Admin	::1	2020-06-15 00:02:26
 /index.php?page=8	Admin_Update_Book	::1	2020-06-15 00:02:49
 /index.php?page=8	Admin_Update_Book	::1	2020-06-15 00:04:47
+/index.php?page=8	Admin_Update_Book	::1	2020-06-15 00:05:58
+/index.php?page=6	Admin	::1	2020-06-15 00:06:00
+/index.php?page=9	Admin_Delete_Book	::1	2020-06-15 00:06:02
