@@ -11,10 +11,10 @@
 <div id="admin-container" class="container">
     <div id="admin-content-section" class="mt-4">
         <h2 class="text-center my-4">Content</h2>
-        <div class="d-flex justify-content-center">
-            <a href="index.php?page=<?= Pages::Admin_Add_Book ?>" class="btn header-btn mx-3">Add book</a>
-            <a href="index.php?page=<?= Pages::Admin_Update_Book ?>" class="btn header-btn mx-3">Update book</a>
-            <a href="index.php?page=<?= Pages::Admin_Delete_Book ?>" class="btn header-btn mx-3">Delete book</a>
+        <div class="d-flex flex-column flex-md-row justify-content-center">
+            <a href="index.php?page=<?= Pages::Admin_Add_Book ?>" class="btn header-btn mx-3 mb-3">Add book</a>
+            <a href="index.php?page=<?= Pages::Admin_Update_Book ?>" class="btn header-btn mx-3 mb-3">Update book</a>
+            <a href="index.php?page=<?= Pages::Admin_Delete_Book ?>" class="btn header-btn mx-3 mb-3">Delete book</a>
         </div>
     </div>
     <div id="admin-statistic-section" class="my-5">
@@ -24,7 +24,7 @@
                 <?php 
                     $page_percentages = get_page_access_percentages();
                     foreach($page_percentages as $key => $value): ?>
-                        <li class="col-3"><?=$key?> - <?=$value?>%</li>        
+                        <li class="col-3 text-center"><?=$key?> - <?=$value?>%</li>        
                 <?php endforeach;?>
             </ul>
         </div>
@@ -34,7 +34,7 @@
                 <?php 
                     $page_access_last_24h = get_page_access_last_24h();
                     foreach($page_access_last_24h as $key => $value): ?>
-                        <li class="col-3"><?=$key?> - <?=$value?></li>        
+                        <li class="col-3 text-center"><?=$key?> - <?=$value?></li>        
                 <?php endforeach;?>
             </ul>
         </div>

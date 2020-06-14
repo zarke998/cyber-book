@@ -420,3 +420,7 @@
 /index.php?page=3	About	::1	2020-06-14 23:42:53
 /index.php?page=3	About	::1	2020-06-14 23:43:03
 /index.php?page=3	About	::1	2020-06-14 23:43:37
+/index.php?page=7	Admin_Add_Book	::1	2020-06-14 23:50:14
+/index.php?page=6	Admin	::1	2020-06-14 23:50:27
+/index.php?page=6	Admin	::1	2020-06-14 23:50:54
+/index.php?page=6	Admin	::1	2020-06-14 23:52:00
