@@ -51,6 +51,9 @@ a{
         color: $online-users-indicator-color;
     }
 }
+.hide-header-top{
+    display: none !important;
+}
 /* #endregion */
 /* #region HOME */
 #main-intro-slider{

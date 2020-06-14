@@ -28,6 +28,10 @@ a {
   color: #00e400;
 }
 
+.hide-header-top {
+  display: none !important;
+}
+
 /* #endregion */
 /* #region HOME */
 #main-intro-slider {

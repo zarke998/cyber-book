@@ -15,8 +15,12 @@
         <!-- Header Start -->
        <div class="header-area">
             <div class="main-header ">
-            
+                    <?php 
+                        if(!isset($_SESSION["user"])) : ?>
+                            <div class="header-top top-bg d-none d-lg-block hide-header-top">
+                    <?php else: ?>
                         <div class="header-top top-bg d-none d-lg-block">
+                    <?php endif; ?>
                             <div class="container-fluid">
                                 <div class="col-xl-12">
                                         <div class="row d-flex justify-content-end align-items-center">
@@ -49,7 +53,10 @@
                                                     <li><a href="checkout.html">Checkout</a></li>
                                                 </ul>
                                             </div>
-                                            <span id="online-users-status"><i class="fas fa-circle mr-1"></i>Online users: <?=get_online_users()?></span>
+                                            <?php 
+                                                if(isset($_SESSION["user"])) : ?>
+                                                    <span id="online-users-status"><i class="fas fa-circle mr-1"></i>Online users: <?=get_online_users()?></span>
+                                            <?php endif;?>
                                         </div>
                                 </div>
                             </div>
