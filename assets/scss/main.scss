@@ -147,8 +147,12 @@ a{
             i{
                 display: none;
 
-                top: 44%;
-                left: 44%;
+                top: 50%;
+                left: 50%;
+
+                margin-left: -25px;
+                margin-top: -25px;
+
                 position: absolute;
 
                 font-size: 2.5rem;
@@ -230,8 +234,12 @@ a{
     i{
         display: none;
 
-        top: 44%;
-        left: 44%;
+        top: 50%;
+        left: 50%;
+
+        margin-left: -25px;
+        margin-top: -25px;
+        
         position: absolute;
 
         font-size: 2.5rem;
@@ -309,6 +317,15 @@ a{
     .bullet-points{
         padding-top: 0px !important;
         padding-bottom: 0px !important;
+    }
+    .best-by-critics-image{
+        i{
+            top: 50%;
+            left: 50%;
+
+            margin-left: -25px;
+            margin-top: -25px;
+        }
     }
 }
 /* #endregion */
@@ -583,7 +600,22 @@ a{
             width: 75%;
         }
     }
+    .single-product-wrapper{
+        padding: 0px 100px !important;
+    }
     
+}
+@media only screen and (max-width: 470px){
+    #export-books-btn{
+        line-height: 1.5;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+}
+@media only screen and (max-width: 420px){
+    .single-product-wrapper{
+        padding: 0px 50px !important;
+    }
 }
 @media only screen and (max-width: 360px){
     .best-by-critics-item{

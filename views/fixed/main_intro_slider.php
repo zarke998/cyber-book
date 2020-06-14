@@ -2,6 +2,7 @@
     if(!defined("ROOT"))
         define("ROOT", $_SERVER["DOCUMENT_ROOT"]);
 
+    require_once ROOT."/models/pages.php";
     require_once ROOT."/models/book/get_book_rand_discount.php";
 
     $book_rand_discount = get_book_rand_discount();
@@ -25,7 +26,7 @@
                                     <p class="mt-5" data-animation="fadeInRight" data-delay=".8s"><?=$book_rand_discount->description?></p>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn" data-animation="fadeInRight" data-delay="1s">
-                                        <a href="industries.html" class="btn hero-btn">Shop Now</a>
+                                        <a href="index.php?page=<?=Pages::Shop?>" class="btn hero-btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>

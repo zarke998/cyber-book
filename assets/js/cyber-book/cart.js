@@ -31,7 +31,7 @@ function loadCartTable(){
             },
             success: function(book){
                 addBookToTable(book);
-                subtotal+= book.price - book.price * book.discount/100;
+                subtotal+= parseFloat((book.price - book.price * book.discount/100).toFixed(2));
                 updateSubtotalTag(subtotal);
             },
             error: function(xhr, errType, errMsg){

@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    $("a[href='#']").click(function(e) { e.preventDefault(); });
 
     loadMostRecentTitles();
 
@@ -25,6 +24,8 @@ function loadMostRecentTitles(){
         success: function(data){
             populateMostRecentTitles(data.query_result);
             $(".product-img i").click(addBookToCart);
+
+            disableEmptyLinks();
         },
         error: function(xhr, errType, errMsg){
             var data = JSON.parse(xhr.responseText);
@@ -125,6 +126,8 @@ function loadBestByCriticsTitles(){
         success: function(data){
             populateBestByCriticsTitles(data.query_result);
             $(".best-by-critics-image i").click(addBookToCart);
+
+            disableEmptyLinks();
         },
         error: function(xhr, errType, errMsg){
             var data = JSON.parse(xhr.responseText);
@@ -181,8 +184,6 @@ function addBookToCart(){
 
     updateCartIndicator();
 }
-
-
 
 function floatTo2Decimals(real){
     return Math.trunc(real*100)/100;

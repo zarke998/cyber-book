@@ -43,6 +43,8 @@ function loadBooks(searchFilter, categoryIds, languageIds, authorIds, publisherI
         },
         success: function(data){
             populateShopList(data.query_result);
+            $(".best-by-critics-image i").click(addBookToCart);
+            disableEmptyLinks();
 
             initializePagination(data.query_count);
             $(".page-link").off("click", loadPageIndex);
@@ -79,10 +81,11 @@ function populateShopList(books){
 
     books.forEach(b => {
         content += `
-        <div class="col-lg-3 col-sm-4 col-6">
+        <div class="single-product-wrapper col-xl-3 col-lg-4 col-sm-6 col-12 px-4 px-sm-5">
             <div class="single-product mb-60">
-                <div class="product-img">
-                    <img src="${b.cover_url}" alt="Book cover">
+                <div class="product-img best-by-critics-image">
+                    <a href="#"><img src="${b.cover_url}" alt="Book cover"></a>
+                    <i class="fas fa-plus-circle" data-id="${b.bookId}"></i>
                 </div>
                 <div class="product-caption">
                     <div class="product-ratting">
@@ -92,7 +95,7 @@ function populateShopList(books){
                         <i class="far fa-star low-star"></i>
                         <i class="far fa-star low-star"></i> -->
                     </div>
-                    <h4><a href="#" data-id="${b.bookId}">${b.title}</a></h4>
+                    <h4><span>${b.title}<span></h4>
                     <div class="price">
                         <ul>
                             ${getPricesTags(b)}
@@ -207,6 +210,28 @@ function sortBooks(){
     currentPage = 1;
     offsetValue = 0;
     loadBooks(searchFilter, categoryIds, languageIds, authorIds, publisherIds, backTypeIds, sortCriteriaId, shopListLimit, offsetValue);
+}
+
+function addBookToCart(){
+    let id = $(this).data("id");
+
+    if(!localStorage){
+        alert("Your browser doesnt't support local storage. Cannot add product to cart.");
+        return;
+    }
+
+    let cart = [];
+    if(localStorage.getItem("cart") != null)
+        cart = JSON.parse(localStorage.getItem("cart"));
+
+    cart.push(id);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    cartCount = cart.length;
+    alert("Book added to cart.");
+
+    updateCartIndicator();
 }
 
 function floatTo2Decimals(real){

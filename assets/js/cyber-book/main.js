@@ -1,8 +1,5 @@
 $(document).ready(function(){
-    $("a[href='#']").click(function(e){
-        e.preventDefault();
-    });
-
+    disableEmptyLinks();
     updateCartIndicator();
 });
 
@@ -13,4 +10,9 @@ function updateCartIndicator(){
     }
 
     $("#shopping-cart span").text(cart.length);
+}
+function disableEmptyLinks(){
+    $("a[href='#']").click(function(e){
+        e.preventDefault();
+    });
 }
