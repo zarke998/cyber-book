@@ -15,6 +15,7 @@
                         <p>GitHub: <a href="https://github.com/zarke998" target="_blank">github.com/zarke998</a></p>
                         <p>LinkedIn: <a href="https://www.linkedin.com/in/andrej-zarkovski-01b8a4188" target="_blank">linkedin.com/in/andrej-zarkovski-01b8a4188</a></p>
                     </div>
+                    <a href="models/public/author_info_word.php" class="btn header-btn mx-auto d-block w-50">Download Author info</a>
                 </div>                
             </div>
         </div>
