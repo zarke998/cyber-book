@@ -7,7 +7,7 @@
 
     $word = new COM("word.application") or die("Error starting word.");
 
-    $word->Visible=1;
+    $word->Visible=0;
     $word->Documents->Add();
 
     $body = "My name is Andrej Zarkovski. I'm studying web programming at 'Visoka ICT Škola' in Belgrade. In my early childhood I was very interested in how computers work and I continued to learn more about them. Now I am pursuing career in computer programming. I love japanese culture and I love playing video games.
