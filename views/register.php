@@ -47,7 +47,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6">
-                <div id="register-side-section" class="login_part_text text-center">
+                <div id="register-side-section" class="login_part_text text-center w-100">
                     <div class="login_part_text_iner">
                         <h2 class="text-stroke-black-1">Already have an account?</h2>
                         <p class="text-stroke-black-1">Sign in via button bellow.</p>
