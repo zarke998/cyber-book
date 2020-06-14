@@ -19,6 +19,14 @@
         foreach($menu as $menu_item){
             $quick_links.= '<li><a href="'.$menu_item->href.'">'.$menu_item->item_name.'</a></li>';
         }
+
+
+        $legal = "";
+
+        $legal_menu = get_menu_by_name("footer-legal");
+        foreach($legal_menu as $menu_item){
+            $legal.= '<li><a href="'.$menu_item->href.'">'.$menu_item->item_name.'</a></li>';
+        }
     
 
         $contact = "";
@@ -64,9 +72,7 @@
                             <div class="footer-tittle">
                                 <h4>Legal</h4>
                                 <ul>
-                                    <li><a href="#">Privacy</a></li>
-                                    <li><a href="#">Terms of Use</a></li>
-                                    <li><a href="#"> DCMA</a></li>
+                                 '.$legal.'
                                 </ul>
                             </div>
                         </div>
