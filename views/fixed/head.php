@@ -8,7 +8,9 @@
                 <meta charset="utf-8">
                 <meta http-equiv="x-ua-compatible" content="ie=edge">
                 <title>'.$title.'</title>
-                <meta name="description" content="">
+                <meta name="author" content="Andrej Zarkovski">
+                <meta name="keywords" content="book, store, online bookstore, cheap, modern">
+                <meta name="description" content="Online book store. Here you can find the most modern books to read, and never be out of touch with the reading culture. Find the books that you want and need for very low prices.">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <link rel="manifest" href="site.webmanifest">
                 <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">

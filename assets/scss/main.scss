@@ -89,7 +89,7 @@ a{
 /* #endregion */
 /* #region HOME */
 #main-intro-slider{
-    background: linear-gradient(rgba(0,0,0,$main-slider-bg-darkness), rgba(0,0,0,$main-slider-bg-darkness)), url("/assets/images/book-wallpaper.jpg") !important;
+    background: linear-gradient(rgba(0,0,0,$main-slider-bg-darkness), rgba(0,0,0,$main-slider-bg-darkness)), url("/assets/images/main-intro-slider-wallpaper.jpg") !important;
     background-size: cover !important;
 
     &-image {
@@ -274,7 +274,7 @@ a{
     }
 }
 #shop-main-intro{
-    background-image: url("/assets/images/books-ultrawide.jpg");
+    background-image: url("/assets/images/intro-wallpapers/shop-wallpaper.jpg");
 }
 #shop-upper-controls{
     padding-bottom: 5px;
@@ -332,7 +332,7 @@ a{
 
 /* #region CONTACT */
 #contact-main-intro{
-    background-image: url("/assets/images/book-ultrawide-2.jpg");
+    background-image: url("/assets/images/intro-wallpapers/contact-wallpaper.jpg");
 }
 #google-maps-contact{
     iframe{
@@ -348,7 +348,7 @@ a{
 
 /* #region ABOUT */
 #about-main-intro{
-    background-image: url("/assets/images/book-ultrawide-3.jpg");
+    background-image: url("/assets/images/intro-wallpapers/about-wallpaper.jpg");
 }
 #about-info{
     padding-top: $about-info-padding-top;
@@ -403,20 +403,20 @@ a{
 
 /* #region LOGIN */
 #login-main-intro{
-    background-image: url("/assets/images/book-ultrawide-4.jpg");
+    background-image: url("/assets/images/intro-wallpapers/login-wallpaper.jpg");
 }
 #login-side-section{
-    background-image: url("/assets/images/book-wallpaper-1.jpg");
+    background-image: url("/assets/images/login-side.jpg");
     background-size: cover;
 }
 /* #endregion */
 
 /* #region REGISTER */
 #register-main-intro{
-    background-image: url("/assets/images/book-ultrawide-4.jpg");
+    background-image: url("/assets/images/intro-wallpapers/login-wallpaper.jpg");
 }
 #register-side-section{
-    background-image: url("/assets/images/book-wallpaper-1.jpg");
+    background-image: url("/assets/images/login-side.jpg");
     background-size: cover;
 }
 #resendActivationLink{
@@ -429,7 +429,7 @@ a{
 
 /* #region ADMIN */
 #admin-main-intro{
-    background-image: url("/assets/images/book-ultrawide-5.jpg");
+    background-image: url("/assets/images/intro-wallpapers/admin-wallpaper.jpg");
     background-position: 0% 50%;
 }
 #admin-pages-percent{
@@ -491,7 +491,7 @@ a{
 
 /* #region CART */
 #cart-main-intro{
-    background-image: url("/assets/images/book-ultrawide-7.jpg");
+    background-image: url("/assets/images/intro-wallpapers/cart-wallpaper.jpg");
     background-position-y: 40%;
 }
 .cart-item{
@@ -508,7 +508,7 @@ a{
 
 /* #region ERROR PAGE */
 #error-main-intro{
-    background-image: url("/assets/images/book-ultrawide-6.jpg");
+    background-image: url("/assets/images/intro-wallpapers/error-wallpaper.jpg");
 }
 /* #endregion */
 
