@@ -13,7 +13,7 @@
                 <meta name="description" content="Online book store. Here you can find the most modern books to read, and never be out of touch with the reading culture. Find the books that you want and need for very low prices.">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
                 <link rel="manifest" href="site.webmanifest">
-                <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">
+                <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
         
                 <!-- CSS here -->
                     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
