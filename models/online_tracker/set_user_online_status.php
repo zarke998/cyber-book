@@ -14,8 +14,8 @@
                     SET is_online=?
                     WHERE id=?";
             $stm = $conn->prepare($query);
-            $stm->bindParam(1,$is_online);
-            $stm->bindParam(2,$id);
+            $stm->bindParam(1,$is_online, PDO::PARAM_INT);
+            $stm->bindParam(2,$id, PDO::PARAM_INT);
             
             if(!$stm->execute()){
                 return false;

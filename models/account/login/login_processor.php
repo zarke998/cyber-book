@@ -26,6 +26,7 @@
             if($stm->rowCount() == 0){
                 http_response_code(401);
                 $err_json = json_encode(["message" => "User not registered."]);
+
                 return false;
             }
 
@@ -40,7 +41,7 @@
                 http_response_code(401);
                 $err_json = json_encode(["message" => "Password incorrect."]);
 
-                log_error("Failed to send mail. Exception: {$e->getMessage()}");
+                log_error("Failed to send mail. Exception:");
                 return false;
             }
 

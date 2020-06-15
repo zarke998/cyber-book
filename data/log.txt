@@ -710,3 +710,6 @@
 /index.php	Home	::1	2020-06-15 13:24:44
 /index.php	Home	::1	2020-06-15 13:25:09
 /index.php	Home	::1	2020-06-15 13:25:31
+/index.php?page=10	Cart	::1	2020-06-15 13:28:23
+/index.php	Home	::1	2020-06-15 13:28:25
+/index.php?page=4	Login	::1	2020-06-15 13:42:11
