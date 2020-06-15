@@ -150,8 +150,7 @@
         $image_tmp = image_by_extension($image_tmp_path, $extension);
 
         // Thumb paths
-        $thumbTime = hrtime(true);
-
+        $thumbTime = round(microtime(true) * 1000);
         $href_small = "/assets/images/books/small/$thumbTime.$extension";
         $href_medium = "/assets/images/books/medium/$thumbTime.$extension";
         $href_big = "/assets/images/books/big/$thumbTime.$extension";
