@@ -3,6 +3,7 @@
         define("ROOT",$_SERVER["DOCUMENT_ROOT"]);
 
     require_once ROOT."/config/connection.php";
+    require_once ROOT."/config/config.php";
     require_once ROOT."/models/pages.php";
     require_once ROOT."/models/mailer/send_mail.php";
 
@@ -55,7 +56,7 @@
             // Send activation link
             $regiserPage = Pages::Register;
             $mailBody = '<h2>Please activate your account by clicking on the link below.</h2>
-                        <p>Click here: <a href="localhost/index.php?page='.$regiserPage.'&uid='.$uid.'&activation_key='.$activation_key.'"> activation link.</a>';
+                        <p>Click here: <a href="'.BASE_URL.'/index.php?page='.$regiserPage.'&uid='.$uid.'&activation_key='.$activation_key.'"> activation link.</a>';
             $send_error = "";
             if(send_mail($email, "CyberBook - Account activation",$mailBody, $send_error)){
                 return true;
